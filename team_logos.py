@@ -437,6 +437,13 @@ CREST_CONFIGS = {
         "border_color": "#C5B358",
         "subtitle": "RAMS",
     },
+    "Lincoln Lions": {
+        "letters": "L",
+        "primary": "#0033A0",       # Lincoln Blue
+        "secondary": "#DAAA00",     # Gold
+        "border_color": "#DAAA00",
+        "subtitle": "LINCOLN",
+    },
     # MLS NEXT Pro (Tier 3 Pro)
     "The Town FC": {
         "letters": "TOWN",
@@ -738,6 +745,8 @@ def get_team_logo(team_name):
         ("mitty", "Archbishop Mitty Monarchs"),
         ("sjcc", "San Jose City College Jaguars"),
         ("de anza", "De Anza Mountain Lions"),
+        ("pioneer", "Pioneer High Mustangs"),
+        ("lincoln", "Lincoln Lions"),
     ]
 
     for needle, target in substring_rules:

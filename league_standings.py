@@ -31,9 +31,16 @@ Provides:
 
 import json
 import os
+import unicodedata
 import team_logos
 
 STANDINGS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "standings.json")
+
+def _normalize_name(name):
+    """Normalize string by removing diacritics / accents and lowercasing."""
+    if not name:
+        return ""
+    return unicodedata.normalize('NFKD', str(name)).encode('ASCII', 'ignore').decode('utf-8').lower().strip()
 
 def load_standings_db():
     """Load standings from data/standings.json if it exists, else use STANDINGS_DATABASE."""
@@ -59,47 +66,64 @@ def get_standings_db():
 STANDINGS_DATABASE = {
     "nfl_nfc_west": {
         "title": "NFL NFC West Standings",
-        "subtitle": "2026 Regular Season",
+        "subtitle": "2026 Regular Season • Week 3 Standings",
         "col_headers": ["#", "Club", "W", "L", "T", "PCT", "+/-"],
         "rows": [
-            {"rank": 1, "team": "San Francisco 49ers", "w": 12, "l": 5, "col3": 0, "col4": ".706", "col5": "+148", "note": "Division Champions"},
-            {"rank": 2, "team": "Los Angeles Rams", "w": 10, "l": 7, "col3": 0, "col4": ".588", "col5": "+27", "note": "Wild Card"},
-            {"rank": 3, "team": "Seattle Seahawks", "w": 9, "l": 8, "col3": 0, "col4": ".529", "col5": "-38", "note": ""},
-            {"rank": 4, "team": "Arizona Cardinals", "w": 4, "l": 13, "col3": 0, "col4": ".235", "col5": "-125", "note": ""},
+            {"rank": 1, "team": "San Francisco 49ers", "w": 2, "l": 1, "col3": 0, "col4": ".667", "col5": "+26", "note": "Division Leader"},
+            {"rank": 2, "team": "Seattle Seahawks", "w": 2, "l": 1, "col3": 0, "col4": ".667", "col5": "+12", "note": ""},
+            {"rank": 3, "team": "Los Angeles Rams", "w": 1, "l": 2, "col3": 0, "col4": ".333", "col5": "-8", "note": ""},
+            {"rank": 4, "team": "Arizona Cardinals", "w": 1, "l": 2, "col3": 0, "col4": ".333", "col5": "-14", "note": ""},
         ],
         "cross_division_opponents": {
-            "New Orleans Saints": {"division": "NFC South", "record": "10-7", "rank": "2nd", "w": 10, "l": 7, "col3": 0, "col4": ".588", "col5": "+36"},
-            "Dallas Cowboys": {"division": "NFC East", "record": "12-5", "rank": "1st", "w": 12, "l": 5, "col3": 0, "col4": ".706", "col5": "+194"},
+            "Miami Dolphins": {"division": "AFC East", "record": "1-2", "rank": "AFC East", "w": 1, "l": 2, "col3": 0, "col4": ".333", "col5": "-18"},
+            "Denver Broncos": {"division": "AFC West", "record": "1-2", "rank": "AFC West", "w": 1, "l": 2, "col3": 0, "col4": ".333", "col5": "-10"},
+            "Washington Commanders": {"division": "NFC East", "record": "2-1", "rank": "NFC East", "w": 2, "l": 1, "col3": 0, "col4": ".667", "col5": "+15"},
+            "Atlanta Falcons": {"division": "NFC South", "record": "2-1", "rank": "NFC South", "w": 2, "l": 1, "col3": 0, "col4": ".667", "col5": "+8"},
+            "New Orleans Saints": {"division": "NFC South", "record": "2-1", "rank": "2nd", "w": 2, "l": 1, "col3": 0, "col4": ".667", "col5": "+10"},
+            "Dallas Cowboys": {"division": "NFC East", "record": "2-1", "rank": "1st", "w": 2, "l": 1, "col3": 0, "col4": ".667", "col5": "+12"},
         }
     },
     "nhl_pacific": {
         "title": "NHL Pacific Division",
-        "subtitle": "2026 Regular Season • Western Conference",
+        "subtitle": "2026–27 Upcoming Season • Western Conference",
         "col_headers": ["#", "Team", "W", "L", "OTL", "PTS", "DIFF"],
         "rows": [
-            {"rank": 1, "team": "Vancouver Canucks", "w": 50, "l": 23, "col3": 9, "col4": "109", "col5": "+56", "note": "Division Leader"},
-            {"rank": 2, "team": "Edmonton Oilers", "w": 49, "l": 27, "col3": 6, "col4": "104", "col5": "+35", "note": "Playoff Spot"},
-            {"rank": 3, "team": "Los Angeles Kings", "w": 44, "l": 27, "col3": 11, "col4": "99", "col5": "+41", "note": "Playoff Spot"},
-            {"rank": 4, "team": "Vegas Golden Knights", "w": 45, "l": 29, "col3": 8, "col4": "98", "col5": "+22", "note": "Wild Card"},
-            {"rank": 5, "team": "Calgary Flames", "w": 38, "l": 39, "col3": 5, "col4": "81", "col5": "-18", "note": ""},
-            {"rank": 6, "team": "Seattle Kraken", "w": 34, "l": 35, "col3": 13, "col4": "81", "col5": "-19", "note": ""},
-            {"rank": 7, "team": "Anaheim Ducks", "w": 27, "l": 50, "col3": 5, "col4": "59", "col5": "-91", "note": ""},
-            {"rank": 8, "team": "San Jose Sharks", "w": 24, "l": 52, "col3": 6, "col4": "54", "col5": "-98", "note": ""},
-        ]
+            {"rank": 1, "team": "Anaheim Ducks", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E", "note": ""},
+            {"rank": 2, "team": "Calgary Flames", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E", "note": ""},
+            {"rank": 3, "team": "Edmonton Oilers", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E", "note": "Defending West Champs"},
+            {"rank": 4, "team": "Los Angeles Kings", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E", "note": ""},
+            {"rank": 5, "team": "San Jose Sharks", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E", "note": "Home Opener Oct 1"},
+            {"rank": 6, "team": "Seattle Kraken", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E", "note": ""},
+            {"rank": 7, "team": "Vancouver Canucks", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E", "note": ""},
+            {"rank": 8, "team": "Vegas Golden Knights", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E", "note": ""},
+        ],
+        "cross_division_opponents": {
+            "Florida Panthers": {"division": "Atlantic Division", "record": "0-0-0", "rank": "Defending Champs", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+            "Boston Bruins": {"division": "Atlantic Division", "record": "0-0-0", "rank": "Atlantic", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+            "Dallas Stars": {"division": "Central Division", "record": "0-0-0", "rank": "Central", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+            "St. Louis Blues": {"division": "Central Division", "record": "0-0-0", "rank": "Central", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+            "Detroit Red Wings": {"division": "Atlantic Division", "record": "0-0-0", "rank": "Atlantic", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+            "Toronto Maple Leafs": {"division": "Atlantic Division", "record": "0-0-0", "rank": "Atlantic", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+            "Montreal Canadiens": {"division": "Atlantic Division", "record": "0-0-0", "rank": "Atlantic", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+            "Ottawa Senators": {"division": "Atlantic Division", "record": "0-0-0", "rank": "Atlantic", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+            "Buffalo Sabres": {"division": "Atlantic Division", "record": "0-0-0", "rank": "Atlantic", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+            "Nashville Predators": {"division": "Central Division", "record": "0-0-0", "rank": "Central", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": "E"},
+        }
     },
     "nba_pacific": {
         "title": "NBA Pacific Division & West",
-        "subtitle": "2026 Regular Season Standings",
+        "subtitle": "2026–27 Upcoming Season • Western Conference",
         "col_headers": ["#", "Team", "W", "L", "GB", "PCT", "STRK"],
         "rows": [
-            {"rank": 1, "team": "Los Angeles Clippers", "w": 51, "l": 31, "col3": "—", "col4": ".622", "col5": "W3", "note": "Division Leader"},
-            {"rank": 2, "team": "Phoenix Suns", "w": 49, "l": 33, "col3": "2.0", "col4": ".598", "col5": "W2", "note": "Playoff Spot"},
-            {"rank": 3, "team": "Los Angeles Lakers", "w": 47, "l": 35, "col3": "4.0", "col4": ".573", "col5": "W1", "note": "Playoff Spot"},
-            {"rank": 4, "team": "Sacramento Kings", "w": 46, "l": 36, "col3": "5.0", "col4": ".561", "col5": "L1", "note": "Play-in"},
-            {"rank": 5, "team": "Golden State Warriors", "w": 46, "l": 36, "col3": "5.0", "col4": ".561", "col5": "W2", "note": "Play-in"},
+            {"rank": 1, "team": "Golden State Warriors", "w": 0, "l": 0, "col3": "—", "col4": ".000", "col5": "—", "note": "Preseason Opener Oct 4"},
+            {"rank": 2, "team": "Los Angeles Clippers", "w": 0, "l": 0, "col3": "—", "col4": ".000", "col5": "—", "note": "Intuit Dome Inaugural Season"},
+            {"rank": 3, "team": "Los Angeles Lakers", "w": 0, "l": 0, "col3": "—", "col4": ".000", "col5": "—", "note": ""},
+            {"rank": 4, "team": "Phoenix Suns", "w": 0, "l": 0, "col3": "—", "col4": ".000", "col5": "—", "note": ""},
+            {"rank": 5, "team": "Sacramento Kings", "w": 0, "l": 0, "col3": "—", "col4": ".000", "col5": "—", "note": ""},
         ],
         "cross_division_opponents": {
-            "Denver Nuggets": {"division": "Northwest Division", "record": "57-25", "rank": "1st West", "w": 57, "l": 25, "col3": "—", "col4": ".695", "col5": "W4"}
+            "Denver Nuggets": {"division": "Northwest Division", "record": "0-0", "rank": "Northwest", "w": 0, "l": 0, "col3": "—", "col4": ".000", "col5": "—"},
+            "Portland Trail Blazers": {"division": "Northwest Division", "record": "0-0", "rank": "Northwest", "w": 0, "l": 0, "col3": "—", "col4": ".000", "col5": "—"}
         }
     },
     "mls_west": {
@@ -156,18 +180,18 @@ STANDINGS_DATABASE = {
     },
     "ahl_pacific": {
         "title": "AHL Pacific Division",
-        "subtitle": "2026 Regular Season • Calder Cup Race",
+        "subtitle": "2026–27 Upcoming Season • Calder Cup Race",
         "col_headers": ["#", "Team", "W", "L", "OTL", "PTS", "PCT"],
         "rows": [
-            {"rank": 1, "team": "Coachella Valley Firebirds", "w": 46, "l": 15, "col3": 11, "col4": "103", "col5": ".715", "note": "Division Leader"},
-            {"rank": 2, "team": "Tucson Roadrunners", "w": 43, "l": 23, "col3": 6, "col4": "92", "col5": ".639", "note": "Playoff Spot"},
-            {"rank": 3, "team": "Ontario Reign", "w": 42, "l": 23, "col3": 7, "col4": "91", "col5": ".632", "note": "Playoff Spot"},
-            {"rank": 4, "team": "Colorado Eagles", "w": 40, "l": 25, "col3": 7, "col4": "87", "col5": ".604", "note": "Playoff Spot"},
-            {"rank": 5, "team": "Abbotsford Canucks", "w": 40, "l": 26, "col3": 6, "col4": "86", "col5": ".597", "note": "Playoff Spot"},
-            {"rank": 6, "team": "Bakersfield Condors", "w": 39, "l": 27, "col3": 6, "col4": "84", "col5": ".583", "note": "Playoff Spot"},
-            {"rank": 7, "team": "Calgary Wranglers", "w": 35, "l": 28, "col3": 9, "col4": "79", "col5": ".549", "note": ""},
-            {"rank": 8, "team": "San Jose Barracuda", "w": 31, "l": 34, "col3": 7, "col4": "69", "col5": ".479", "note": ""},
-            {"rank": 9, "team": "San Diego Gulls", "w": 26, "l": 35, "col3": 11, "col4": "63", "col5": ".438", "note": ""},
+            {"rank": 1, "team": "Abbotsford Canucks", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": ".000", "note": ""},
+            {"rank": 2, "team": "Bakersfield Condors", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": ".000", "note": ""},
+            {"rank": 3, "team": "Calgary Wranglers", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": ".000", "note": ""},
+            {"rank": 4, "team": "Coachella Valley Firebirds", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": ".000", "note": "Defending West Champs"},
+            {"rank": 5, "team": "Colorado Eagles", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": ".000", "note": ""},
+            {"rank": 6, "team": "Ontario Reign", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": ".000", "note": ""},
+            {"rank": 7, "team": "San Diego Gulls", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": ".000", "note": ""},
+            {"rank": 8, "team": "San Jose Barracuda", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": ".000", "note": "Tech CU Arena Opener Oct 11"},
+            {"rank": 9, "team": "Tucson Roadrunners", "w": 0, "l": 0, "col3": 0, "col4": "0", "col5": ".000", "note": ""},
         ]
     },
     "hs_wcal": {
@@ -191,18 +215,15 @@ STANDINGS_DATABASE = {
     },
     "hs_bval": {
         "title": "BVAL High School Football",
-        "subtitle": "2026 Blossom Valley Athletic League Varsity",
+        "subtitle": "2026 Blossom Valley Athletic League (Mount Hamilton - North)",
         "col_headers": ["#", "School", "W", "L", "CONF", "PF", "PA"],
         "rows": [
-            {"rank": 1, "team": "Branham High Bruins", "w": 9, "l": 1, "col3": "5-0", "col4": "315", "col5": "148", "note": "Division Leader"},
-            {"rank": 2, "team": "Leigh High Longhorns", "w": 8, "l": 2, "col3": "4-1", "col4": "280", "col5": "162", "note": "CCS Contender"},
-            {"rank": 3, "team": "Leland Chargers", "w": 7, "l": 3, "col3": "3-2", "col4": "245", "col5": "175", "note": "Playoff Spot"},
-            {"rank": 4, "team": "Live Oak Acorns", "w": 6, "l": 4, "col3": "3-2", "col4": "230", "col5": "190", "note": "Playoff Spot"},
-            {"rank": 5, "team": "Willow Glen Rams", "w": 5, "l": 5, "col3": "2-3", "col4": "210", "col5": "205", "note": ""},
-            {"rank": 6, "team": "Pioneer High Mustangs", "w": 5, "l": 5, "col3": "2-3", "col4": "195", "col5": "220", "note": ""},
-            {"rank": 7, "team": "Santa Teresa Saints", "w": 4, "l": 6, "col3": "1-4", "col4": "180", "col5": "245", "note": ""},
-            {"rank": 8, "team": "Piedmont Hills Pirates", "w": 3, "l": 7, "col3": "1-4", "col4": "170", "col5": "260", "note": ""},
-            {"rank": 9, "team": "Westmont High Warriors", "w": 2, "l": 8, "col3": "0-5", "col4": "140", "col5": "290", "note": ""},
+            {"rank": 1, "team": "Santa Teresa Saints", "w": 4, "l": 1, "col3": "0-0", "col4": "180", "col5": "110", "note": "Division Leader"},
+            {"rank": 2, "team": "Leland Chargers", "w": 3, "l": 1, "col3": "0-0", "col4": "140", "col5": "85", "note": "Playoff Contender"},
+            {"rank": 3, "team": "Pioneer Mustangs", "w": 1, "l": 2, "col3": "0-0", "col4": "58", "col5": "75", "note": ""},
+            {"rank": 4, "team": "Leigh High Longhorns", "w": 1, "l": 4, "col3": "0-0", "col4": "78", "col5": "142", "note": ""},
+            {"rank": 5, "team": "Piedmont Hills Pirates", "w": 0, "l": 4, "col3": "0-0", "col4": "48", "col5": "135", "note": ""},
+            {"rank": 6, "team": "Branham High Bruins", "w": 0, "l": 5, "col3": "0-0", "col4": "89", "col5": "205", "note": ""},
         ]
     },
     "hs_ebal": {
@@ -223,42 +244,54 @@ STANDINGS_DATABASE = {
     },
     "ncaa_acc_football": {
         "title": "NCAA ACC Football Standings",
-        "subtitle": "2026 Atlantic Coast Conference FBS",
+        "subtitle": "2026 Atlantic Coast Conference FBS • Late September Standings",
         "col_headers": ["#", "University", "CONF", "OVR", "PF", "PA", "STRK"],
         "rows": [
-            {"rank": 1, "team": "Miami Hurricanes", "w": 10, "l": 2, "col3": "7-1", "col4": "498", "col5": "+266", "note": "CFP Contender"},
-            {"rank": 2, "team": "Clemson Tigers", "w": 9, "l": 3, "col3": "7-1", "col4": "412", "col5": "+166", "note": "ACC Championship"},
-            {"rank": 3, "team": "SMU Mustangs", "w": 10, "l": 2, "col3": "7-1", "col4": "456", "col5": "+198", "note": "Top 15"},
-            {"rank": 4, "team": "California Golden Bears", "w": 8, "l": 4, "col3": "5-3", "col4": "345", "col5": "+75", "note": "Bowl Eligible"},
-            {"rank": 5, "team": "Pitt Panthers", "w": 8, "l": 4, "col3": "5-3", "col4": "360", "col5": "+80", "note": "Bowl Eligible"},
-            {"rank": 6, "team": "Louisville Cardinals", "w": 7, "l": 5, "col3": "5-3", "col4": "350", "col5": "+85", "note": "Bowl Eligible"},
-            {"rank": 7, "team": "Syracuse Orange", "w": 7, "l": 5, "col3": "4-4", "col4": "330", "col5": "+20", "note": "Bowl Eligible"},
-            {"rank": 8, "team": "Virginia Cavaliers", "w": 5, "l": 7, "col3": "3-5", "col4": "275", "col5": "-45", "note": ""},
-            {"rank": 9, "team": "Stanford Cardinal", "w": 5, "l": 7, "col3": "3-5", "col4": "260", "col5": "-75", "note": ""},
-            {"rank": 10, "team": "North Carolina Tar Heels", "w": 6, "l": 6, "col3": "3-5", "col4": "325", "col5": "-15", "note": ""},
+            {"rank": 1, "team": "Miami Hurricanes", "w": 4, "l": 0, "col3": "1-0", "col4": "4-0", "col5": "+127", "note": "CFP Contender (#4)"},
+            {"rank": 2, "team": "Clemson Tigers", "w": 3, "l": 1, "col3": "1-0", "col4": "3-1", "col5": "+68", "note": "ACC Championship Contender"},
+            {"rank": 3, "team": "SMU Mustangs", "w": 3, "l": 1, "col3": "1-0", "col4": "3-1", "col5": "+68", "note": "Top 25"},
+            {"rank": 4, "team": "Louisville Cardinals", "w": 3, "l": 1, "col3": "1-0", "col4": "3-1", "col5": "+62", "note": "Bowl Contender"},
+            {"rank": 5, "team": "California Golden Bears", "w": 3, "l": 1, "col3": "0-1", "col4": "3-1", "col5": "+66", "note": "Memorial Stadium"},
+            {"rank": 6, "team": "Pitt Panthers", "w": 3, "l": 1, "col3": "0-1", "col4": "3-1", "col5": "+30", "note": "Bowl Contender"},
+            {"rank": 7, "team": "Syracuse Orange", "w": 3, "l": 1, "col3": "1-1", "col4": "3-1", "col5": "+33", "note": ""},
+            {"rank": 8, "team": "Virginia Cavaliers", "w": 2, "l": 2, "col3": "0-1", "col4": "2-2", "col5": "-7", "note": ""},
+            {"rank": 9, "team": "Stanford Cardinal", "w": 1, "l": 2, "col3": "0-1", "col4": "1-2", "col5": "-26", "note": "Stanford Stadium"},
+            {"rank": 10, "team": "North Carolina Tar Heels", "w": 2, "l": 2, "col3": "0-1", "col4": "2-2", "col5": "-10", "note": ""},
         ],
         "cross_division_opponents": {
-            "Minnesota Golden Gophers": {"division": "Big Ten Conference", "record": "6-6", "rank": "Big Ten", "w": 6, "l": 6, "col3": "4-5", "col4": "285", "col5": "+15"},
-            "San Diego State Aztecs": {"division": "Mountain West", "record": "4-8", "rank": "MWC", "w": 4, "l": 8, "col3": "2-5", "col4": "235", "col5": "-85"},
+            "Minnesota Golden Gophers": {"division": "Big Ten Conference", "record": "3-1", "rank": "Big Ten", "w": 3, "l": 1, "col3": "1-1", "col4": "105", "col5": "+35"},
+            "San Diego State Aztecs": {"division": "Mountain West", "record": "2-2", "rank": "MWC", "w": 2, "l": 2, "col3": "0-0", "col4": "82", "col5": "-3"},
+            "Wagner Seahawks": {"division": "FCS NEC", "record": "1-3", "rank": "NEC", "w": 1, "l": 3, "col3": "0-1", "col4": "45", "col5": "-85"},
+            "Duke Blue Devils": {"division": "ACC", "record": "4-0", "rank": "ACC", "w": 4, "l": 0, "col3": "1-0", "col4": "142", "col5": "+65"},
+            "Georgia Tech Yellow Jackets": {"division": "ACC", "record": "3-1", "rank": "ACC", "w": 3, "l": 1, "col3": "1-1", "col4": "125", "col5": "+30"},
+            "Wake Forest Demon Deacons": {"division": "ACC", "record": "2-2", "rank": "ACC", "w": 2, "l": 2, "col3": "0-1", "col4": "98", "col5": "-10"},
+            "Notre Dame Fighting Irish": {"division": "FBS Independent", "record": "3-1", "rank": "#14", "w": 3, "l": 1, "col3": "—", "col4": "135", "col5": "+52"},
+            "Virginia Tech Hokies": {"division": "ACC", "record": "2-2", "rank": "ACC", "w": 2, "l": 2, "col3": "0-1", "col4": "92", "col5": "+5"},
+            "NC State Wolfpack": {"division": "ACC", "record": "3-1", "rank": "ACC", "w": 3, "l": 1, "col3": "0-1", "col4": "115", "col5": "+20"},
+            "Elon Phoenix": {"division": "FCS CAA", "record": "1-3", "rank": "CAA", "w": 1, "l": 3, "col3": "0-1", "col4": "60", "col5": "-40"},
+            "UNLV Rebels": {"division": "Mountain West", "record": "3-0", "rank": "MWC", "w": 3, "l": 0, "col3": "0-0", "col4": "110", "col5": "+68"},
         }
     },
     "ncaa_mwc_football": {
         "title": "Mountain West Conference Football",
-        "subtitle": "2026 MWC Regular Season Standings",
+        "subtitle": "2026 MWC Regular Season • Late September Standings",
         "col_headers": ["#", "University", "CONF", "OVR", "PF", "PA", "STRK"],
         "rows": [
-            {"rank": 1, "team": "Boise State Broncos", "w": 11, "l": 1, "col3": "7-0", "col4": "480", "col5": "+265", "note": "MWC Leader / CFP"},
-            {"rank": 2, "team": "UNLV Rebels", "w": 10, "l": 2, "col3": "6-1", "col4": "435", "col5": "+175", "note": "Championship Game"},
-            {"rank": 3, "team": "San Jose State Spartans", "w": 8, "l": 4, "col3": "5-2", "col4": "382", "col5": "+92", "note": "Bowl Eligible"},
-            {"rank": 4, "team": "Colorado State Rams", "w": 7, "l": 5, "col3": "5-2", "col4": "315", "col5": "+35", "note": "Bowl Eligible"},
-            {"rank": 5, "team": "Fresno State Bulldogs", "w": 6, "l": 6, "col3": "4-3", "col4": "320", "col5": "+10", "note": "Bowl Eligible"},
-            {"rank": 6, "team": "Air Force Falcons", "w": 5, "l": 7, "col3": "3-4", "col4": "245", "col5": "-50", "note": ""},
-            {"rank": 7, "team": "Nevada Wolf Pack", "w": 4, "l": 8, "col3": "2-5", "col4": "250", "col5": "-90", "note": ""},
-            {"rank": 8, "team": "Hawaii Rainbow Warriors", "w": 5, "l": 7, "col3": "2-5", "col4": "265", "col5": "-65", "note": ""},
-            {"rank": 9, "team": "San Diego State Aztecs", "w": 4, "l": 8, "col3": "2-5", "col4": "235", "col5": "-85", "note": ""},
+            {"rank": 1, "team": "UNLV Rebels", "w": 3, "l": 0, "col3": "0-0", "col4": "3-0", "col5": "+68", "note": "MWC Leader / Top 25"},
+            {"rank": 2, "team": "Boise State Broncos", "w": 3, "l": 1, "col3": "1-0", "col4": "3-1", "col5": "+74", "note": "CFP Contender (#21)"},
+            {"rank": 3, "team": "Fresno State Bulldogs", "w": 3, "l": 1, "col3": "1-0", "col4": "3-1", "col5": "+51", "note": "Valley Rivalry Leader"},
+            {"rank": 4, "team": "San Jose State Spartans", "w": 2, "l": 2, "col3": "0-1", "col4": "2-2", "col5": "+9", "note": "CEFCU Stadium"},
+            {"rank": 5, "team": "Colorado State Rams", "w": 2, "l": 2, "col3": "0-0", "col4": "2-2", "col5": "+5", "note": "Bowl Contender"},
+            {"rank": 6, "team": "San Diego State Aztecs", "w": 2, "l": 2, "col3": "0-0", "col4": "2-2", "col5": "-3", "note": ""},
+            {"rank": 7, "team": "Hawaii Rainbow Warriors", "w": 2, "l": 2, "col3": "0-0", "col4": "2-2", "col5": "-6", "note": ""},
+            {"rank": 8, "team": "Air Force Falcons", "w": 1, "l": 3, "col3": "0-1", "col4": "1-3", "col5": "-27", "note": ""},
+            {"rank": 9, "team": "Nevada Wolf Pack", "w": 1, "l": 3, "col3": "0-1", "col4": "1-3", "col5": "-33", "note": ""},
         ],
         "cross_division_opponents": {
-            "Western Michigan Broncos": {"division": "MAC Conference", "record": "5-7", "rank": "MAC West", "w": 5, "l": 7, "col3": "4-4", "col4": "290", "col5": "-40"}
+            "Western Michigan Broncos": {"division": "MAC Conference", "record": "1-3", "rank": "MAC West", "w": 1, "l": 3, "col3": "0-0", "col4": "80", "col5": "-25"},
+            "Wyoming Cowboys": {"division": "Mountain West", "record": "1-3", "rank": "MWC", "w": 1, "l": 3, "col3": "0-0", "col4": "60", "col5": "-35"},
+            "UTEP Miners": {"division": "Conference USA", "record": "1-3", "rank": "C-USA", "w": 1, "l": 3, "col3": "0-0", "col4": "68", "col5": "-45"},
+            "New Mexico Lobos": {"division": "Mountain West", "record": "1-3", "rank": "MWC", "w": 1, "l": 3, "col3": "0-0", "col4": "75", "col5": "-40"},
         }
     },
     "ncaa_west_mens_soccer": {
@@ -340,17 +373,17 @@ STANDINGS_DATABASE = {
     },
     "ncaa_wcc_hoops": {
         "title": "NCAA Men's Basketball (WCC & NorCal)",
-        "subtitle": "2026 West Coast Conference & Regional Standings",
+        "subtitle": "2026–27 Upcoming Season • Regional Standings",
         "col_headers": ["#", "University", "CONF", "OVR", "PCT", "+/-", "STRK"],
         "rows": [
-            {"rank": 1, "team": "Gonzaga Bulldogs", "w": 27, "l": 8, "col3": "14-2", "col4": ".771", "col5": "+15.2", "note": "Conference Leader"},
-            {"rank": 2, "team": "Saint Mary's Gaels", "w": 26, "l": 8, "col3": "15-1", "col4": ".765", "col5": "+14.8", "note": "NCAA Qualifier"},
-            {"rank": 3, "team": "Santa Clara Broncos Men", "w": 21, "l": 13, "col3": "11-5", "col4": ".618", "col5": "+5.4", "note": "WCC Semifinals"},
-            {"rank": 4, "team": "San Francisco Dons", "w": 23, "l": 11, "col3": "11-5", "col4": ".676", "col5": "+6.1", "note": "NIT Contender"},
-            {"rank": 5, "team": "Loyola Marymount Lions", "w": 15, "l": 17, "col3": "8-8", "col4": ".469", "col5": "-1.2", "note": ""},
-            {"rank": 6, "team": "Washington State Cougars", "w": 18, "l": 14, "col3": "9-7", "col4": ".562", "col5": "+2.8", "note": ""},
-            {"rank": 7, "team": "Oregon State Beavers", "w": 16, "l": 16, "col3": "7-9", "col4": ".500", "col5": "-0.4", "note": ""},
-            {"rank": 8, "team": "Stanislaus State", "w": 14, "l": 14, "col3": "9-9", "col4": ".500", "col5": "-1.0", "note": ""},
+            {"rank": 1, "team": "Gonzaga Bulldogs", "w": 0, "l": 0, "col3": "0-0", "col4": "0-0", "col5": ".000", "note": "Preseason Top 10"},
+            {"rank": 2, "team": "Saint Mary's Gaels", "w": 0, "l": 0, "col3": "0-0", "col4": "0-0", "col5": ".000", "note": "WCC Contender"},
+            {"rank": 3, "team": "Santa Clara Broncos Men", "w": 0, "l": 0, "col3": "0-0", "col4": "0-0", "col5": ".000", "note": "Leavey Center Opener Nov"},
+            {"rank": 4, "team": "San Francisco Dons", "w": 0, "l": 0, "col3": "0-0", "col4": "0-0", "col5": ".000", "note": "Sobrato Center"},
+            {"rank": 5, "team": "Loyola Marymount Lions", "w": 0, "l": 0, "col3": "0-0", "col4": "0-0", "col5": ".000", "note": ""},
+            {"rank": 6, "team": "Washington State Cougars", "w": 0, "l": 0, "col3": "0-0", "col4": "0-0", "col5": ".000", "note": "WCC Affiliate"},
+            {"rank": 7, "team": "Oregon State Beavers", "w": 0, "l": 0, "col3": "0-0", "col4": "0-0", "col5": ".000", "note": "WCC Affiliate"},
+            {"rank": 8, "team": "Stanislaus State", "w": 0, "l": 0, "col3": "0-0", "col4": "0-0", "col5": ".000", "note": "CCAA NorCal"},
         ]
     }
 }
@@ -365,8 +398,8 @@ def classify_game(game):
     league = game.get("league", "")
     home = game.get("home_team", "")
     away = game.get("away_team", "")
-    teams_str = f"{home} {away}".lower()
-    league_lower = league.lower()
+    teams_str = _normalize_name(f"{home} {away}")
+    league_lower = _normalize_name(league)
 
     if sport == "Football":
         if level == "Pro":
@@ -431,12 +464,12 @@ def classify_game(game):
 
 def matches_team_name(name1, name2):
     """
-    Fuzzy and exact matcher for team names.
+    Fuzzy and exact matcher for team names (diacritic- and case-insensitive).
     """
     if not name1 or not name2:
         return False
-    n1 = name1.lower().strip()
-    n2 = name2.lower().strip()
+    n1 = _normalize_name(name1)
+    n2 = _normalize_name(name2)
     if n1 == n2:
         return True
     

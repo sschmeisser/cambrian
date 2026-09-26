@@ -27,7 +27,7 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger("repopulate")
 
 SOUTH_BAY_CITIES = {
-    "San Jose", "Campbell", "Santa Clara", "Cupertino", "Mountain View", "Stanford", "Los Gatos", "Saratoga"
+    "San Jose", "Campbell", "Santa Clara", "Cupertino", "Mountain View", "Stanford", "Los Gatos", "Saratoga", "Morgan Hill"
 }
 
 HEADERS = {
@@ -53,7 +53,7 @@ WEEKS_CONFIG = [
         "short_dates": "Sep 21 – 27",
         "start_date": "2026-09-21",
         "end_date": "2026-09-27",
-        "title": "Fall Kickoff & The Campbell District Derby",
+        "title": "Fall Kickoff & WCAL Holy War",
         "is_past": False,
     },
     {
@@ -83,7 +83,7 @@ WEEKS_CONFIG = [
         "short_dates": "Oct 12 – 18",
         "start_date": "2026-10-12",
         "end_date": "2026-10-18",
-        "title": "Branham Homecoming & MLS Decision Day at PayPal Park",
+        "title": "The Campbell District Derby & MLS Decision Day",
         "is_past": False,
     },
     {
@@ -93,7 +93,7 @@ WEEKS_CONFIG = [
         "short_dates": "Oct 19 – 25",
         "start_date": "2026-10-19",
         "end_date": "2026-10-25",
-        "title": "Monday Night Football at Levi's & ACC Showdown",
+        "title": "Branham Homecoming & Monday Night Football at Levi's",
         "is_past": False,
     },
     {
@@ -316,14 +316,14 @@ def main():
     hs_schedule = [
         # Week 0 (Sep 18)
         {"date": "2026-09-18", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
-         "league": "BVAL Non-League", "level": "High School", "home_team": "Branham High Bruins", "away_team": "Willow Glen Rams",
-         "venue": "Branham Stadium", "city": "San Jose", "badge": "🛡️ Cambrian District Season Opener",
-         "home_score": 28, "away_score": 14, "status": "final",
-         "context_reason": "Branham christened the autumn gridiron under the Camden Avenue lights with a dominant non-league showing.",
+         "league": "BVAL Non-League", "level": "High School", "home_team": "Branham High Bruins", "away_team": "Lincoln Lions",
+         "venue": "Branham Stadium", "city": "San Jose", "badge": "🛡️ Non-League Season Opener",
+         "home_score": 21, "away_score": 31, "status": "final",
+         "context_reason": "Lincoln Lions traveled to Camden Avenue and pulled away in the fourth quarter against Branham.",
          "insider_tips": "Park early in the Branham student lot along Branham Lane. The Bruin student 'Bear Cave' fills the east bleachers.",
          "importance": "high", "ticket_text": "GoFan Digital", "ticket_url": "https://gofan.co/app/school/CA22889",
          "recap_url": "https://www.mercurynews.com/sports/high-school-sports/",
-         "result_summary": "Branham powered past Willow Glen 28-14 behind an overwhelming rushing attack in front of a packed home bleacher crowd on Camden Avenue."},
+         "result_summary": "Lincoln Lions 31, Branham Bruins 21."},
 
         {"date": "2026-09-18", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
          "league": "WCAL Non-League Showcase", "level": "High School", "home_team": "Junípero Serra Padres", "away_team": "Folsom Bulldogs",
@@ -336,39 +336,47 @@ def main():
          "result_summary": "Serra turned back state powerhouse Folsom with a game-winning 32-yard field goal in the final two minutes to claim a dramatic 24-21 non-league victory."},
 
         # Week 1 (Sep 25)
+        {"date": "2026-09-25", "day_of_week": "Friday", "time": "7:15 PM", "sport": "Football", "sport_icon": "🏈",
+         "league": "BVAL Non-League", "level": "High School", "home_team": "Live Oak Acorns", "away_team": "Branham High Bruins",
+         "venue": "Live Oak Stadium", "city": "Morgan Hill", "badge": "🍁 Non-League Inter-Division Clash",
+         "home_score": 54, "away_score": 15, "status": "final",
+         "context_reason": "Live Oak powered past visiting Branham behind an overwhelming rushing attack in Morgan Hill.",
+         "insider_tips": "Live Oak Stadium offers picturesque views of the El Toro peak; grab a hot chocolate at the booster stand.",
+         "importance": "high", "ticket_text": "GoFan Digital", "ticket_url": "https://gofan.co",
+         "recap_url": "https://www.mercurynews.com/sports/high-school-sports/",
+         "result_summary": "Live Oak Acorns 54, Branham Bruins 15."},
+
         {"date": "2026-09-25", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
-         "league": "BVAL Campbell Rivalry", "level": "High School", "home_team": "Branham High Bruins", "away_team": "Leigh High Longhorns",
-         "venue": "Branham Stadium", "city": "San Jose", "badge": "🏆 The Campbell Union District Derby",
-         "home_score": None, "away_score": None, "status": "upcoming",
-         "context_reason": "The defining neighborhood rivalry of Cambrian Park! Branham and Leigh battle for south San Jose bragging rights under the Camden Avenue lights.",
-         "insider_tips": "The biggest crowd of the season on Camden Avenue. Walk or bike from Cambrian Park neighborhoods if possible to avoid parking gridlock.",
-         "importance": "marquee", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22889"},
+         "league": "BVAL Non-League", "level": "High School", "home_team": "Willow Glen Rams", "away_team": "Leigh High Longhorns",
+         "venue": "Willow Glen Stadium", "city": "San Jose", "badge": "🐏 BVAL Non-League Showdown",
+         "home_score": 28, "away_score": 13, "status": "final",
+         "context_reason": "Willow Glen contained Leigh's passing attack to secure a 28-13 non-league victory under Friday night lights.",
+         "insider_tips": "Willow Glen Stadium is nestled in the neighborhood off Lincoln Avenue; street parking along Cherry Avenue.",
+         "importance": "high", "ticket_text": "GoFan Digital", "ticket_url": "https://gofan.co",
+         "recap_url": "https://www.mercurynews.com/sports/high-school-sports/",
+         "result_summary": "Willow Glen Rams 28, Leigh Longhorns 13."},
 
         {"date": "2026-09-25", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
          "league": "WCAL (West Catholic)", "level": "High School", "home_team": "Saint Francis Lancers", "away_team": "Junípero Serra Padres",
          "venue": "Kevin Makley Field", "city": "Mountain View", "badge": "⚔️ The Holy War: WCAL League Opener",
-         "home_score": None, "away_score": None, "status": "upcoming",
+         "home_score": 9, "away_score": 28, "status": "final",
          "context_reason": "The most intense high school rivalry in Northern California. Serra travels to Mountain View for a ferocious opening night in the West Catholic Athletic League.",
          "insider_tips": "Expect overflow standing-room crowds. Grab hot chocolate and churros from the Lancer booster shed near the scoreboard.",
-         "importance": "marquee", "ticket_text": "Lancer Athletics", "ticket_url": "https://www.sfhs.com/athletics"},
+         "importance": "marquee", "ticket_text": "Lancer Athletics", "ticket_url": "https://www.sfhs.com/athletics",
+         "recap_url": "https://www.mercurynews.com/sports/high-school-sports/",
+         "result_summary": "Serra 28, Saint Francis 9."},
 
         {"date": "2026-09-25", "day_of_week": "Friday", "time": "7:30 PM", "sport": "Football", "sport_icon": "🏈",
          "league": "EBAL Showcase", "level": "High School", "home_team": "De La Salle Spartans", "away_team": "St. Mary's (Stockton)",
          "venue": "Owen Owens Field", "city": "Concord", "badge": "🛡️ NorCal Powerhouse Collision",
-         "home_score": None, "away_score": None, "status": "upcoming",
+         "home_score": 55, "away_score": 9, "status": "final",
          "context_reason": "Perennial NorCal juggernaut De La Salle hosts a physical St. Mary's squad in Concord.",
          "insider_tips": "De La Salle's famed veer offense is poetry in motion from the midfield general admission bleachers.",
-         "importance": "high", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22898"},
+         "importance": "high", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22898",
+         "recap_url": "https://www.mercurynews.com/sports/high-school-sports/",
+         "result_summary": "De La Salle 55, St. Mary's 9."},
 
-        # Week 2 (Oct 2)
-        {"date": "2026-10-02", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
-         "league": "BVAL League Opener", "level": "High School", "home_team": "Branham High Bruins", "away_team": "Live Oak Acorns",
-         "venue": "Branham Stadium", "city": "San Jose", "badge": "🍁 BVAL South Division Clash",
-         "home_score": None, "away_score": None, "status": "upcoming",
-         "context_reason": "Branham kicks off divisional BVAL action against a stubborn, run-heavy Live Oak squad from Morgan Hill.",
-         "insider_tips": "Bring a light windbreaker as autumn temperatures dip into the upper 50s after the 8:00 PM halftime show.",
-         "importance": "high", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22889"},
-
+        # Week 2 (Oct 2) - Branham BYE week / Leigh BYE week
         {"date": "2026-10-02", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
          "league": "WCAL", "level": "High School", "home_team": "Bellarmine College Prep Bells", "away_team": "Archbishop Mitty Monarchs",
          "venue": "Jaguar Stadium (SJCC)", "city": "San Jose", "badge": "🔔 Downtown San Jose Catholic Derby",
@@ -378,16 +386,25 @@ def main():
          "importance": "high", "ticket_text": "Bells Athletics", "ticket_url": "https://www.bcp.org/athletics"},
 
         # Week 3 (Oct 9)
-        {"date": "2026-10-09", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
-         "league": "BVAL", "level": "High School", "home_team": "Branham High Bruins", "away_team": "Piedmont Hills Pirates",
-         "venue": "Branham Stadium", "city": "San Jose", "badge": "⚔️ East Foothills vs. Cambrian",
+        {"date": "2026-10-09", "day_of_week": "Friday", "time": "7:15 PM", "sport": "Football", "sport_icon": "🏈",
+         "league": "BVAL", "level": "High School", "home_team": "Piedmont Hills Pirates", "away_team": "Branham High Bruins",
+         "venue": "Pirate Stadium", "city": "San Jose", "badge": "⚔️ East Foothills vs. Cambrian",
          "home_score": None, "away_score": None, "status": "upcoming",
-         "context_reason": "Piedmont Hills brings its high-tempo spread offense to Camden Avenue to test Branham's disciplined secondary.",
-         "insider_tips": "The Bruin marching band's full field show at halftime is one of the best in the Silicon Valley circuit.",
+         "context_reason": "Branham opens BVAL Mount Hamilton divisional play on the road against Piedmont Hills' high-tempo spread offense.",
+         "insider_tips": "Pirate Stadium is situated on Piedmont Road near the East Foothills. Arrive early for parking near the main gym lot.",
          "importance": "standard", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22889"},
 
         # Week 4 (Oct 16)
-        {"date": "2026-10-16", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
+        {"date": "2026-10-16", "day_of_week": "Friday", "time": "7:15 PM", "sport": "Football", "sport_icon": "🏈",
+         "league": "BVAL Campbell Rivalry", "level": "High School", "home_team": "Branham High Bruins", "away_team": "Leigh High Longhorns",
+         "venue": "Branham Stadium", "city": "San Jose", "badge": "🏆 The Campbell Union District Derby / Cambrian Derby",
+         "home_score": None, "away_score": None, "status": "upcoming",
+         "context_reason": "The defining neighborhood rivalry of Cambrian Park! Branham and Leigh battle for south San Jose bragging rights under the Camden Avenue lights.",
+         "insider_tips": "The biggest crowd of the season on Camden Avenue. Walk or bike from Cambrian Park neighborhoods if possible to avoid parking gridlock.",
+         "importance": "marquee", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22889"},
+
+        # Week 5 (Oct 23)
+        {"date": "2026-10-23", "day_of_week": "Friday", "time": "7:15 PM", "sport": "Football", "sport_icon": "🏈",
          "league": "BVAL Homecoming", "level": "High School", "home_team": "Branham High Bruins", "away_team": "Santa Teresa Saints",
          "venue": "Branham Stadium", "city": "San Jose", "badge": "👑 Branham Homecoming Night 2026",
          "home_score": None, "away_score": None, "status": "upcoming",
@@ -395,31 +412,14 @@ def main():
          "insider_tips": "Arrive before 6:30 PM to secure bleacher seating. The halftime fireworks and float procession draw over 3,000 spectators.",
          "importance": "marquee", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22889"},
 
-        {"date": "2026-10-16", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
-         "league": "BVAL Non-League", "level": "High School", "home_team": "Westmont High Warriors", "away_team": "Leigh High Longhorns",
-         "venue": "Westmont Stadium", "city": "Campbell", "badge": "🐴 West Valley Neighborhood Battle",
-         "home_score": None, "away_score": None, "status": "upcoming",
-         "context_reason": "Crosstown Campbell Union High School District rivals square off on Encinal Avenue.",
-         "insider_tips": "Parking along Encinal Avenue fills quickly; use the main high school lot behind the gymnasium.",
-         "importance": "high", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22893"},
-
-        # Week 5 (Oct 23)
-        {"date": "2026-10-23", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
-         "league": "BVAL", "level": "High School", "home_team": "Branham High Bruins", "away_team": "Leland Chargers",
-         "venue": "Branham Stadium", "city": "San Jose", "badge": "⚡ Almaden Valley vs. Cambrian",
-         "home_score": None, "away_score": None, "status": "upcoming",
-         "context_reason": "Almaden Valley power Leland brings its disciplined trench game to Camden Avenue.",
-         "insider_tips": "Wear your warmest Bruin blue or gold jacket as late October nights in the valley cool rapidly.",
-         "importance": "high", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22889"},
-
         # Week 6 (Oct 30)
-        {"date": "2026-10-30", "day_of_week": "Friday", "time": "7:00 PM", "sport": "Football", "sport_icon": "🏈",
-         "league": "BVAL Title Decider", "level": "High School", "home_team": "Branham High Bruins", "away_team": "Pioneer High Mustangs",
-         "venue": "Branham Stadium", "city": "San Jose", "badge": "🏆 Senior Night & Blossom Valley Title Game",
+        {"date": "2026-10-30", "day_of_week": "Friday", "time": "7:15 PM", "sport": "Football", "sport_icon": "🏈",
+         "league": "BVAL", "level": "High School", "home_team": "Leland Chargers", "away_team": "Branham High Bruins",
+         "venue": "Pat Tillman Stadium", "city": "San Jose", "badge": "⚡ Cambrian vs. Almaden Valley Rivalry",
          "home_score": None, "away_score": None, "status": "upcoming",
-         "context_reason": "Regular season finale on Camden Avenue with league championship and CCS playoff seeding hanging in the balance.",
-         "insider_tips": "Senior ceremonies commence at 6:20 PM sharp before kickoff. Bring stadium blankets and noisemakers.",
-         "importance": "marquee", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22889"}
+         "context_reason": "Branham travels to Almaden Valley to take on the Chargers at historic Pat Tillman Stadium in a crucial late-season BVAL battle.",
+         "insider_tips": "Pat Tillman Stadium at Leland High offers picturesque foothill views; bleacher seating is ample on the visitors' side.",
+         "importance": "high", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22889"}
     ]
 
     # Junior College Football (CCCAA 3C2A)
@@ -503,118 +503,161 @@ def main():
             ticket_url = "https://www.nhl.com/sharks/tickets"
             is_pre = (eg["season_type"] == 1) or ("09-" in g_date and int(g_date.split("-")[2]) < 28)
             league = "NHL Preseason" if is_pre else "NHL"
-            venue = "SAP Center"
-            city = "San Jose"
-            insider_tips = "Diridon Station is right across Autumn Street from the arena — ride Caltrain or VTA Light Rail to dodge parking fees. San Pedro Square Market is ideal for pregame pints and tacos."
+            is_sharks_home = "Sharks" in h_team
 
-            if "Anaheim Ducks" in a_team:
-                badge = "🦈 10-Goal Shark Attack: Preseason Blowout" if eg["status"] == "final" else "🏒 Pacific Division Battle: Ducks at Sharks"
-                context_reason = "San Jose's dynamic young core featuring Macklin Celebrini put on an absolute shooting gallery clinic against Anaheim."
-            elif "Vegas Golden Knights" in a_team:
-                badge = "⭐ Western Rivalry: Vegas at San Jose"
-                context_reason = "Fierce Pacific Division rivals clash on the ice at the Shark Tank."
-            elif "Florida Panthers" in a_team:
-                badge = "🚨 MUST-WATCH: SHARKS REGULAR SEASON HOME OPENER"
-                importance = "marquee"
-                context_reason = "THE biggest hockey night of the year in San Jose! The 17-foot shark head lowers from the rafters with fog and laser lights to launch the 2026-27 campaign against defending champions Florida."
-            elif "Los Angeles Kings" in a_team:
-                badge = "⚔️ The Classic California Rivalry: Kings at Sharks"
-                importance = "high"
-                context_reason = "Decades of bad blood between NorCal and SoCal hockey in an electric Saturday night atmosphere at SAP Center."
-            elif "Edmonton Oilers" in a_team:
-                badge = "⭐ Superstar Showcase: McDavid at SAP Center"
-                importance = "marquee"
-                context_reason = "Connor McDavid and the Western conference champions visit San Jose for a marquee Saturday matinee."
-            elif "Boston Bruins" in a_team:
-                badge = "🐻 Original Six Showcase: Bruins at Sharks"
-                importance = "high"
-                context_reason = "Historic Original Six powerhouse Boston makes its lone annual trek into the Shark Tank."
-            elif "Buffalo Sabres" in a_team:
-                badge = "⚡ Fast-Paced Tuesday: Sabres at Sharks"
-                context_reason = "Young offensive firepower on full display on Tuesday night in downtown San Jose."
-            elif "Vancouver Canucks" in a_team:
-                badge = "🍁 Pacific Northwest Duel: Canucks at Sharks"
-                context_reason = "Pacific Division rivals clash along the boards at SAP Center."
-            elif "Ottawa Senators" in a_team:
-                badge = "🎃 Halloween Night at The Shark Tank"
-                importance = "high"
-                context_reason = "Costume contests in the concourses, festive organ music, and Pacific Division action against Ottawa."
+            if is_sharks_home:
+                venue = "SAP Center"
+                city = "San Jose"
+                insider_tips = "Diridon Station is right across Autumn Street from the arena — ride Caltrain or VTA Light Rail to dodge parking fees. San Pedro Square Market is ideal for pregame pints and tacos."
+
+                if "Anaheim Ducks" in a_team:
+                    badge = "🦈 10-Goal Shark Attack: Preseason Blowout" if eg["status"] == "final" else "🏒 Pacific Division Battle: Ducks at Sharks"
+                    context_reason = "San Jose's dynamic young core featuring Macklin Celebrini put on an absolute shooting gallery clinic against Anaheim."
+                elif "Vegas Golden Knights" in a_team:
+                    badge = "⭐ Western Rivalry: Vegas at San Jose"
+                    context_reason = "Fierce Pacific Division rivals clash on the ice at the Shark Tank."
+                elif "Florida Panthers" in a_team:
+                    badge = "🚨 MUST-WATCH: SHARKS REGULAR SEASON HOME OPENER"
+                    importance = "marquee"
+                    context_reason = "THE biggest hockey night of the year in San Jose! The 17-foot shark head lowers from the rafters with fog and laser lights to launch the 2026-27 campaign against defending champions Florida."
+                elif "Los Angeles Kings" in a_team:
+                    badge = "⚔️ The Classic California Rivalry: Kings at Sharks"
+                    importance = "high"
+                    context_reason = "Decades of bad blood between NorCal and SoCal hockey in an electric Saturday night atmosphere at SAP Center."
+                elif "Edmonton Oilers" in a_team:
+                    badge = "⭐ Superstar Showcase: McDavid at SAP Center"
+                    importance = "marquee"
+                    context_reason = "Connor McDavid and the Western conference champions visit San Jose for a marquee Saturday matinee."
+                elif "Boston Bruins" in a_team:
+                    badge = "🐻 Original Six Showcase: Bruins at Sharks"
+                    importance = "high"
+                    context_reason = "Historic Original Six powerhouse Boston makes its lone annual trek into the Shark Tank."
+                elif "Buffalo Sabres" in a_team:
+                    badge = "⚡ Fast-Paced Tuesday: Sabres at Sharks"
+                    context_reason = "Young offensive firepower on full display on Tuesday night in downtown San Jose."
+                elif "Vancouver Canucks" in a_team:
+                    badge = "🍁 Pacific Northwest Duel: Canucks at Sharks"
+                    context_reason = "Pacific Division rivals clash along the boards at SAP Center."
+                elif "Ottawa Senators" in a_team:
+                    badge = "🎃 Halloween Night at The Shark Tank"
+                    importance = "high"
+                    context_reason = "Costume contests in the concourses, festive organ music, and Pacific Division action against Ottawa."
+                else:
+                    badge = f"🏒 NHL Action: {a_team} at Sharks"
+                    context_reason = f"Sharks battle {a_team} at SAP Center."
             else:
-                badge = f"🏒 NHL Action: {a_team} at Sharks"
-                context_reason = f"Sharks battle {a_team} at SAP Center."
+                venue = eg.get("venue") or "Away Arena"
+                city = eg.get("city") or "Away City"
+                ticket_text = "Visiting Tickets"
+                insider_tips = "Sharks on the road — check broadcast listings on NBC Sports California."
+                badge = f"🏒 NHL Action: Sharks at {h_team}" if not is_pre else f"🏒 NHL Preseason: Sharks at {h_team}"
+                context_reason = f"Sharks travel to face {h_team} at {venue}."
 
         elif feed == "nba":
             sport = "Basketball"
             icon = "🏀"
             level = "Pro"
             league = "NBA Preseason"
-            venue = "Chase Center"
-            city = "San Francisco"
-            ticket_text = "Warriors Tickets"
-            ticket_url = "https://www.nba.com/warriors/tickets"
-            insider_tips = "Take BART to Embarcadero or Powell and transfer to the Muni T-Third light rail, which stops directly in front of the Chase Center West entrance."
-            if "Lakers" in a_team:
-                badge = "👑 California Classic: Lakers at Warriors"
-                importance = "marquee"
-                context_reason = "Stephen Curry and the Warriors host the rival Lakers at Chase Center in a premier preseason showcase."
-            elif "Kings" in a_team:
-                badge = "👑 NorCal Derby: Kings at Warriors"
-                importance = "high"
-                context_reason = "Sacramento travels down I-80 for an energetic NorCal clash on the San Francisco waterfront."
+            is_warriors_home = "Warriors" in h_team
+
+            if is_warriors_home:
+                venue = "Chase Center"
+                city = "San Francisco"
+                ticket_text = "Warriors Tickets"
+                ticket_url = "https://www.nba.com/warriors/tickets"
+                insider_tips = "Take BART to Embarcadero or Powell and transfer to the Muni T-Third light rail, which stops directly in front of the Chase Center West entrance."
+                if "Lakers" in a_team:
+                    badge = "👑 California Classic: Lakers at Warriors"
+                    importance = "marquee"
+                    context_reason = "Stephen Curry and the Warriors host the rival Lakers at Chase Center in a premier preseason showcase."
+                elif "Kings" in a_team:
+                    badge = "👑 NorCal Derby: Kings at Warriors"
+                    importance = "high"
+                    context_reason = "Sacramento travels down I-80 for an energetic NorCal clash on the San Francisco waterfront."
+                else:
+                    badge = f"🏀 Warriors Hoops: {a_team} at Chase Center"
+                    context_reason = f"Warriors test their depth against {a_team}."
             else:
-                badge = f"🏀 Warriors Hoops: {a_team} at Chase Center"
-                context_reason = f"Warriors test their depth against {a_team}."
+                venue = eg.get("venue") or "Away Arena"
+                city = eg.get("city") or "Away City"
+                ticket_text = "Visiting Tickets"
+                ticket_url = "https://www.nba.com/warriors/tickets"
+                insider_tips = "Watch live on NBC Sports Bay Area or listen on 95.7 The Game."
+                badge = f"🏀 NBA Preseason: Warriors at {h_team}"
+                context_reason = f"Warriors test their depth on the road against {h_team} at {venue}."
 
         elif feed == "mls":
             sport = "Soccer"
             icon = "⚽"
             level = "Pro"
             league = "MLS"
-            venue = "PayPal Park"
-            city = "San Jose"
-            ticket_text = "Quakes Tickets"
-            ticket_url = "https://www.sjearthquakes.com/tickets"
-            insider_tips = "PayPal Park features the largest outdoor bar in North America behind the north goal. Grab pints and watch warmups from the lawn."
-            if "Portland" in a_team:
-                badge = "🌲 Western Classic: Timbers at Quakes"
-                importance = "high"
-                context_reason = "The Timbers Army visits Silicon Valley in a fast-paced Western Conference clash under the Saturday night lights."
-            elif "Nashville" in a_team:
-                badge = "🔥 MLS Decision Day: Nashville SC at Quakes"
-                importance = "marquee"
-                context_reason = "Regular season finale on Decision Day with playoff berths and final Western seedings on the line."
-            elif "LAFC" in a_team:
-                badge = "⭐ NorCal vs SoCal: LAFC at Quakes"
-                importance = "marquee"
-                context_reason = "Black and Gold powerhouse LAFC visits PayPal Park in a heated California rivalry duel."
+            is_quakes_home = "Earthquakes" in h_team
+
+            if is_quakes_home:
+                venue = "PayPal Park"
+                city = "San Jose"
+                ticket_text = "Quakes Tickets"
+                ticket_url = "https://www.sjearthquakes.com/tickets"
+                insider_tips = "PayPal Park features the largest outdoor bar in North America behind the north goal. Grab pints and watch warmups from the lawn."
+                if "Portland" in a_team:
+                    badge = "🌲 Western Classic: Timbers at Quakes"
+                    importance = "high"
+                    context_reason = "The Timbers Army visits Silicon Valley in a fast-paced Western Conference clash under the Saturday night lights."
+                elif "Nashville" in a_team:
+                    badge = "🔥 MLS Decision Day: Nashville SC at Quakes"
+                    importance = "marquee"
+                    context_reason = "Regular season finale on Decision Day with playoff berths and final Western seedings on the line."
+                elif "LAFC" in a_team:
+                    badge = "⭐ NorCal vs SoCal: LAFC at Quakes"
+                    importance = "marquee"
+                    context_reason = "Black and Gold powerhouse LAFC visits PayPal Park in a heated California rivalry duel."
+                else:
+                    badge = f"⚽ MLS Matchday: {a_team} at Earthquakes"
+                    context_reason = f"San Jose Earthquakes host {a_team}."
             else:
-                badge = f"⚽ MLS Matchday: {a_team} at Earthquakes"
-                context_reason = f"San Jose Earthquakes host {a_team}."
+                venue = eg.get("venue") or "Away Stadium"
+                city = eg.get("city") or "Away City"
+                ticket_text = "Away Tickets"
+                ticket_url = "https://www.sjearthquakes.com/tickets"
+                insider_tips = "Stream live on MLS Season Pass on Apple TV."
+                badge = f"⚽ MLS Matchday: Earthquakes at {h_team}"
+                context_reason = f"San Jose Earthquakes travel to face {h_team} at {venue}."
 
         elif feed == "nwsl":
             sport = "Soccer"
             icon = "⚽"
             level = "Pro"
             league = "NWSL"
-            venue = "PayPal Park"
-            city = "San Jose"
-            ticket_text = "Bay FC Tickets"
-            ticket_url = "https://bayfc.com/tickets"
-            insider_tips = "Bay FC matches feature a vibrant family atmosphere with local South Bay food trucks lining the concourses."
-            if "Orlando Pride" in a_team:
-                badge = "⭐ Superstars in San Jose: Orlando Pride at Bay FC"
-                importance = "marquee"
-                context_reason = "Bay FC welcomes Brazilian legend Marta and the powerhouse Orlando Pride to PayPal Park."
-            elif "Portland Thorns" in a_team:
-                badge = "🌹 West Coast Showdown: Thorns at Bay FC"
-                importance = "high"
-                context_reason = "Pacific Northwest powerhouse Portland visits PayPal Park in an essential late-season playoff duel."
-            elif "Racing Louisville" in a_team:
-                badge = "🛡️ NWSL Showdown: Louisville at Bay FC"
-                context_reason = "Bay FC battles for crucial late-season points at PayPal Park."
+            is_bayfc_home = "Bay FC" in h_team
+
+            if is_bayfc_home:
+                venue = "PayPal Park"
+                city = "San Jose"
+                ticket_text = "Bay FC Tickets"
+                ticket_url = "https://bayfc.com/tickets"
+                insider_tips = "Bay FC matches feature a vibrant family atmosphere with local South Bay food trucks lining the concourses."
+                if "Orlando Pride" in a_team:
+                    badge = "⭐ Superstars in San Jose: Orlando Pride at Bay FC"
+                    importance = "marquee"
+                    context_reason = "Bay FC welcomes Brazilian legend Marta and the powerhouse Orlando Pride to PayPal Park."
+                elif "Portland Thorns" in a_team:
+                    badge = "🌹 West Coast Showdown: Thorns at Bay FC"
+                    importance = "high"
+                    context_reason = "Pacific Northwest powerhouse Portland visits PayPal Park in an essential late-season playoff duel."
+                elif "Racing Louisville" in a_team:
+                    badge = "🛡️ NWSL Showdown: Louisville at Bay FC"
+                    context_reason = "Bay FC battles for crucial late-season points at PayPal Park."
+                else:
+                    badge = f"⚽ NWSL Action: {a_team} at Bay FC"
+                    context_reason = f"Bay FC host {a_team} at PayPal Park."
             else:
-                badge = f"⚽ NWSL Action: {a_team} at Bay FC"
-                context_reason = f"Bay FC host {a_team} at PayPal Park."
+                venue = eg.get("venue") or "Away Stadium"
+                city = eg.get("city") or "Away City"
+                ticket_text = "Away Tickets"
+                ticket_url = "https://bayfc.com/tickets"
+                insider_tips = "Stream live on NWSL+ or national broadcast partners."
+                badge = f"⚽ NWSL Action: Bay FC at {h_team}"
+                context_reason = f"Bay FC travels to battle {h_team} at {venue}."
 
         elif feed == "ncaa_football":
             sport = "Football"
@@ -727,7 +770,7 @@ def main():
 
     # Add High School & JUCO games
     for g in hs_schedule + juco_schedule:
-        g["is_cambrian"] = ("Branham" in g.get("venue", "")) or ("Leigh" in (g.get("home_team", "") + g.get("away_team", ""))) or ("Westmont" in g.get("venue", ""))
+        g["is_cambrian"] = ("Branham" in (g.get("home_team", "") + g.get("away_team", "") + g.get("venue", ""))) or ("Leigh" in (g.get("home_team", "") + g.get("away_team", ""))) or ("Westmont" in g.get("venue", ""))
         g["is_south_bay"] = (g.get("city", "") in SOUTH_BAY_CITIES)
         g["tags"] = [g["sport"].lower(), g["league"].lower(), "high school" if g["level"] == "High School" else "juco"]
         final_games.append(g)

@@ -43,7 +43,10 @@ SOUTH_BAY_CITIES = {
     "Santa Clara",
     "Cupertino",
     "Mountain View",
-    "Stanford"
+    "Stanford",
+    "Morgan Hill",
+    "Los Gatos",
+    "Saratoga"
 }
 
 def is_cambrian_game(g):
