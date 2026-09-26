@@ -264,6 +264,29 @@ def main():
         a_team = a["team"].get("displayName", "")
         feed = ev.get("_feed", "")
 
+        # STRICT ARCHITECTURAL RULE: Only list home games for local in-person attendance.
+        # Skip all away road games where the local Bay Area team is NOT the home team
+        # (e.g. Sharks playing in Vegas/Anaheim/Dallas/Boston; Warriors in LA/Portland;
+        # 49ers in Seattle; Cal at UNLV; Stanford at Duke; SJSU at Hawaii; Quakes in Colorado; Bay FC in KC/Denver; etc.)
+        is_bay_home = False
+        if feed == "nfl" and "49ers" in h_team:
+            is_bay_home = True
+        elif feed == "nba" and "Warriors" in h_team:
+            is_bay_home = True
+        elif feed == "nhl" and "Sharks" in h_team:
+            is_bay_home = True
+        elif feed == "mls" and "Earthquakes" in h_team:
+            is_bay_home = True
+        elif feed == "nwsl" and "Bay" in h_team:
+            is_bay_home = True
+        elif feed == "ncaa_football" and any(k in h_team for k in ["Stanford", "California", "Cal Golden Bears", "San José State", "San Jose State"]):
+            is_bay_home = True
+        elif "ncaa_soccer" in feed and any(k in h_team for k in ["Stanford", "Santa Clara", "San Jose State", "San José State", "California", "Cal Golden Bears"]):
+            is_bay_home = True
+
+        if not is_bay_home:
+            continue
+
         status_obj = c.get("status", {}) or ev.get("status", {})
         status_type = status_obj.get("type", {})
         is_completed = bool(status_type.get("completed", False) or status_type.get("name") == "STATUS_FINAL")
@@ -421,17 +444,8 @@ def main():
          "importance": "high", "ticket_text": "GoFan Tickets", "ticket_url": "https://gofan.co/app/school/CA22889"}
     ]
 
-    # Junior College Football (CCCAA 3C2A)
+    # Junior College Football (CCCAA 3C2A) — Home Games Only
     juco_schedule = [
-        {"date": "2026-09-19", "day_of_week": "Saturday", "time": "1:00 PM", "sport": "Football", "sport_icon": "🏈",
-         "league": "CCCAA / 3C2A", "level": "Junior College", "home_team": "West Hills Coalinga", "away_team": "San Jose City College Jaguars",
-         "venue": "Memorial Stadium (Coalinga)", "city": "Coalinga", "badge": "🏈 Central Valley JUCO Duel",
-         "home_score": 17, "away_score": 28, "status": "final",
-         "context_reason": "SJCC opened their 2026 campaign with a gritty road victory in the Central Valley.",
-         "insider_tips": "Jaguar offense looked explosive in early second-half transitions.",
-         "importance": "standard", "ticket_text": "SJCC Athletics", "ticket_url": "https://sjcctickets.com",
-         "recap_url": "https://sjcctickets.com", "result_summary": "San Jose City College controlled the line of scrimmage in the fourth quarter to secure a 28-17 road triumph at West Hills."},
-
         {"date": "2026-09-26", "day_of_week": "Saturday", "time": "1:00 PM", "sport": "Football", "sport_icon": "🏈",
          "league": "CCCAA / 3C2A", "level": "Junior College", "home_team": "San Jose City College Jaguars", "away_team": "Monterey Peninsula Lobos",
          "venue": "Jaguar Stadium (SJCC)", "city": "San Jose", "badge": "🏈 Coast Conference South Opener",

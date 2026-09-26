@@ -535,19 +535,19 @@ def discover_bay_area_games(start_date: str, end_date: str, home_only: bool = Tr
                     if "Baptist" in h_team or "Baptist" in a_team:
                         continue
 
-                    # Check Bay Area hosting or participation
+                    # Architectural Rule: Strictly filter to games where the local Bay Area team is the HOME TEAM (home_only=True)
+                    # Skip all away road games where the local Bay Area team is NOT the home team
                     is_home_bay = any(k.lower() in h_team.lower() for k in keywords)
-                    is_away_bay = any(k.lower() in a_team.lower() for k in keywords)
 
-                    if is_home_bay or (not home_only and is_away_bay):
+                    if is_home_bay:
                         seen_ids.add(ev_id)
                         g["endpoint_key"] = ep_key
-                        g["is_bay_host"] = is_home_bay
+                        g["is_bay_host"] = True
                         discovered.append(g)
 
         curr += timedelta(days=1)
 
-    log.info(f"Discovered {len(discovered)} Bay Area games between {start_date} and {end_date}.")
+    log.info(f"Discovered {len(discovered)} Bay Area home games between {start_date} and {end_date}.")
     return discovered
 
 
@@ -645,18 +645,74 @@ def sync_schedule_for_window(
             # Generate punchy editorial badge and context
             h_team = dg["home_team"]
             a_team = dg["away_team"]
+
+            # Map authentic local home venues
             if "Sharks" in h_team:
+                venue = "SAP Center"
+                city = "San Jose"
                 badge = f"🦈 Preseason Hockey: {a_team} at {h_team}" if "Preseason" in defaults["league"] else f"⭐ Pacific Division Clash: {a_team} vs Sharks"
                 context_reason = f"Hockey returns to SAP Center as San Jose's dynamic young core tests their chemistry against {a_team}."
                 insider_tips = "Diridon Station is right across Autumn Street from the arena — ride Caltrain or VTA Light Rail to skip parking. San Pedro Square Market is ideal for pregame dinner."
             elif "49ers" in h_team:
+                venue = "Levi's Stadium"
+                city = "Santa Clara"
                 badge = f"🏈 NFC Showdown: {a_team} at 49ers"
                 context_reason = f"The 49ers host {a_team} at Levi's Stadium in a pivotal regular season clash."
                 insider_tips = "Take the VTA Orange Line light rail directly to the Great America station outside Intel Gate A."
+            elif "Warriors" in h_team:
+                venue = "Chase Center"
+                city = "San Francisco"
+                badge = f"🏀 Warriors Hoops: {a_team} at Warriors"
+                context_reason = f"Golden State Warriors host {a_team} at Chase Center."
+                insider_tips = "Take Muni T-Third light rail directly to Chase Center."
+            elif "Valkyries" in h_team:
+                venue = "Chase Center"
+                city = "San Francisco"
+                badge = f"🏀 WNBA Hoops: {a_team} at Golden State Valkyries"
+                context_reason = f"Golden State Valkyries host {a_team} at Chase Center in an exciting WNBA contest."
+                insider_tips = "Take Muni T-Third light rail directly to Chase Center."
+            elif "Earthquakes" in h_team:
+                venue = "PayPal Park"
+                city = "San Jose"
+                badge = f"⚽ MLS Matchday: {a_team} at Earthquakes"
+                context_reason = f"San Jose Earthquakes host {a_team} at PayPal Park."
+                insider_tips = "PayPal Park features the largest outdoor bar in North America behind the north goal."
+            elif "Bay" in h_team:
+                venue = "PayPal Park"
+                city = "San Jose"
+                badge = f"⚽ NWSL Action: {a_team} at Bay FC"
+                context_reason = f"Bay FC host {a_team} at PayPal Park."
+                insider_tips = "PayPal Park concourses feature food trucks from across the South Bay."
+            elif "Stanford" in h_team:
+                venue = "Stanford Stadium" if ep_key == "ncaa_football" else "Cagan Stadium"
+                city = "Stanford"
+                badge = f"🌲 Stanford Cardinal: {a_team} at Stanford"
+                context_reason = f"Stanford Cardinal host {a_team} in collegiate action."
+                insider_tips = "Park early and walk through the historic Stanford eucalyptus groves."
+            elif "California" in h_team or "Cal Golden Bears" in h_team:
+                venue = "California Memorial Stadium" if ep_key == "ncaa_football" else "Edwards Stadium"
+                city = "Berkeley"
+                badge = f"🐻 Cal Athletics: {a_team} at California"
+                context_reason = f"California Golden Bears host {a_team} in Berkeley."
+                insider_tips = "BART drops you in downtown Berkeley, an easy walk to the campus venues."
+            elif "San José State" in h_team or "San Jose State" in h_team:
+                venue = "CEFCU Stadium" if ep_key == "ncaa_football" else "Spartan Soccer Complex"
+                city = "San Jose"
+                badge = f"⚔️ Spartan Athletics: {a_team} at SJSU"
+                context_reason = f"San Jose State Spartans host {a_team} in South Bay collegiate action."
+                insider_tips = "Park at the South Campus lots off 7th Street."
+            elif "Santa Clara" in h_team:
+                venue = "Stevens Stadium"
+                city = "Santa Clara"
+                badge = f"🐴 Broncos Soccer: {a_team} at Santa Clara"
+                context_reason = f"Santa Clara Broncos host {a_team} at Stevens Stadium."
+                insider_tips = "The Leavey Center garage offers easy parking on soccer gamedays."
             else:
+                venue = dg.get("venue") or defaults["venue"]
+                city = dg.get("venue_city") or defaults["city"]
                 badge = f"⭐ Local Showcase: {a_team} at {h_team}"
                 context_reason = f"{h_team} host {a_team} in an exciting {defaults['league']} contest."
-                insider_tips = f"Arrive early at {dg.get('venue') or defaults['venue']} for easy parking and concessions."
+                insider_tips = f"Arrive early at {venue} for easy parking and concessions."
 
             result_summary = None
             if is_completed and h_score is not None and a_score is not None:
@@ -664,7 +720,7 @@ def sync_schedule_for_window(
                 loser = a_team if winner == h_team else h_team
                 w_score = max(h_score, a_score)
                 l_score = min(h_score, a_score)
-                result_summary = f"{winner} secured an emphatic {w_score}-{l_score} victory over {loser} at {dg.get('venue') or defaults['venue']}."
+                result_summary = f"{winner} secured an emphatic {w_score}-{l_score} victory over {loser} at {venue}."
 
             new_game = {
                 "id": new_id,
@@ -681,8 +737,8 @@ def sync_schedule_for_window(
                 "home_score": h_score,
                 "away_score": a_score,
                 "status": "final" if is_completed else "upcoming",
-                "venue": dg.get("venue") or defaults["venue"],
-                "city": dg.get("venue_city") or defaults["city"],
+                "venue": venue,
+                "city": city,
                 "badge": badge,
                 "context_reason": context_reason,
                 "insider_tips": insider_tips,
@@ -692,14 +748,14 @@ def sync_schedule_for_window(
                 "recap_url": dg.get("source_url") or defaults["ticket_url"],
                 "result_summary": result_summary,
                 "is_cambrian": False,
-                "is_south_bay": bool(defaults["is_south_bay"] or (dg.get("venue_city") in SOUTH_BAY_CITIES)),
+                "is_south_bay": bool(defaults["is_south_bay"] or (city in SOUTH_BAY_CITIES)),
                 "tags": defaults["tags"],
                 "weather": {
                     "temp": "68°F",
-                    "cond": "Indoor Arena" if "Arena" in (dg.get("venue") or defaults["venue"]) else "Clear Evening",
-                    "icon": "🏟️" if "Arena" in (dg.get("venue") or defaults["venue"]) else "🌙",
-                    "attire": "Comfortable indoor layers",
-                    "indoor": bool("Arena" in (dg.get("venue") or defaults["venue"]))
+                    "cond": "Indoor Arena" if "Arena" in venue or "Chase" in venue or "SAP" in venue else "Clear Evening",
+                    "icon": "🏟️" if "Arena" in venue or "Chase" in venue or "SAP" in venue else "🌙",
+                    "attire": "Comfortable indoor layers" if "Arena" in venue or "Chase" in venue or "SAP" in venue else "Layers recommended",
+                    "indoor": bool("Arena" in venue or "Chase" in venue or "SAP" in venue)
                 }
             }
 
