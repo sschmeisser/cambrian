@@ -5476,6 +5476,47 @@
         "attire": "Comfortable light layers",
         "indoor": false
       }
+    },
+    {
+      "id": "w1-20",
+      "week": 1,
+      "date": "2026-09-27",
+      "day_of_week": "Sunday",
+      "time": "6:00 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "WNBA",
+      "level": "Pro",
+      "home_team": "Golden State Valkyries",
+      "away_team": "Dallas Wings",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "⭐ Local Showcase: Dallas Wings at Golden State Valkyries",
+      "context_reason": "Golden State Valkyries host Dallas Wings in an exciting WNBA contest.",
+      "insider_tips": "Arrive early at Chase Center for easy parking and concessions.",
+      "importance": "high",
+      "ticket_text": "Valkyries Tickets",
+      "ticket_url": "https://valkyries.wnba.com/tickets",
+      "recap_url": "https://www.espn.com/wnba/game/_/gameId/401918016/wings-valkyries",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "wnba",
+        "valkyries",
+        "womens sports"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Comfortable indoor layers",
+        "indoor": false
+      }
     }
   ]
 }
