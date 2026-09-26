@@ -58,7 +58,6 @@ ESPN_ENDPOINTS = {
 # HTTP headers that avoid 403 blocks from ESPN
 _HEADERS = {
     "Accept": "application/json",
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)",
 }
 
 # ---------------------------------------------------------------------------
