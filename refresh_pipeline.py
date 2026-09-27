@@ -652,7 +652,7 @@ def run_self_tests() -> bool:
     # 4. Test HTML compiler
     out_path = build_calendar.generate_html()
     assert os.path.exists(out_path), "sports_calendar.html was not generated"
-    index_path = os.path.join(ROOT_DIR, "index.html")
+    index_path = os.path.join(ROOT_DIR, "public", "index.html")
     assert os.path.exists(index_path), "index.html was not synchronized"
     assert os.path.getsize(index_path) > 100_000, "Generated HTML too small"
     print(f"✓ HTML compilation verified ({os.path.getsize(index_path):,} bytes)")
@@ -804,7 +804,7 @@ def main():
             if args.commit:
                 log.info("Committing and pushing changes to GitHub...")
                 try:
-                    subprocess.run(["git", "add", "data/", "index.html", "sports_calendar.html"], check=True)
+                    subprocess.run(["git", "add", "data/", "public/index.html", "public/sports_calendar.html"], check=True)
                     commit_msg = f"chore(auto): refresh schedules, scores & standings [{datetime.date.today().isoformat()}]"
                     subprocess.run(["git", "commit", "-m", commit_msg], check=True)
                     subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)

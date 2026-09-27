@@ -26,8 +26,28 @@ try:
     from zoneinfo import ZoneInfo
     PACIFIC_TZ = ZoneInfo("America/Los_Angeles")
 except ImportError:
-    from datetime import timezone
-    PACIFIC_TZ = timezone(timedelta(hours=-7))
+    try:
+        from backports.zoneinfo import ZoneInfo
+        PACIFIC_TZ = ZoneInfo("America/Los_Angeles")
+    except ImportError:
+        # Final fallback: approximate DST shim — see requirements.txt
+        import datetime as _dt
+        class ZoneInfo:  # minimal shim
+            def __init__(self, key):
+                self._key = key
+            def utcoffset(self, dt):
+                # PDT (UTC-7) Mar–Oct, PST (UTC-8) Nov–Feb (approximate)
+                if dt is None:
+                    dt = _dt.datetime.now()
+                month = dt.month
+                if 3 <= month <= 10:
+                    return _dt.timedelta(hours=-7)
+                return _dt.timedelta(hours=-8)
+            def tzname(self, dt):
+                return "PDT" if (dt and 3 <= dt.month <= 10) else "PST"
+            def fromutc(self, dt):
+                return dt + self.utcoffset(dt)
+        PACIFIC_TZ = ZoneInfo("America/Los_Angeles")
 
 try:
     import requests
@@ -40,6 +60,7 @@ logging.basicConfig(
     format="%(levelname)s  %(message)s",
 )
 log = logging.getLogger("schedule_fetcher")
+from constants import SOUTH_BAY_CITIES
 
 # ---------------------------------------------------------------------------
 # ESPN public API endpoints — all free, no key required
@@ -82,9 +103,6 @@ BAY_AREA_TEAM_KEYWORDS = {
     "ncaa_soccer_m": ["Santa Clara", "Stanford", "San Jose State", "California"],
 }
 
-SOUTH_BAY_CITIES = {
-    "San Jose", "Campbell", "Santa Clara", "Cupertino", "Mountain View", "Stanford", "Los Gatos", "Saratoga"
-}
 
 # ---------------------------------------------------------------------------
 # Cache: {(endpoint_key, date_str) -> list[event_dict]}

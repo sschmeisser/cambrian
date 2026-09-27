@@ -22,13 +22,11 @@ sys.path.insert(0, ROOT_DIR)
 import team_logos
 import league_standings
 import build_calendar
+from constants import SOUTH_BAY_CITIES
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger("repopulate")
 
-SOUTH_BAY_CITIES = {
-    "San Jose", "Campbell", "Santa Clara", "Cupertino", "Mountain View", "Stanford", "Los Gatos", "Saratoga", "Morgan Hill"
-}
 
 HEADERS = {
     "Accept": "application/json",

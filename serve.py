@@ -9,7 +9,8 @@ import os
 import shutil
 
 PORT = 8999
-DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+# Serve only the public/ subdirectory — never the project root (exposes .py source and data/ JSON)
+DIRECTORY = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'public')
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -22,11 +23,10 @@ def start_server():
         httpd.serve_forever()
 
 if __name__ == "__main__":
-    # Ensure index.html exists
-    idx = os.path.join(DIRECTORY, "index.html")
-    cal = os.path.join(DIRECTORY, "sports_calendar.html")
-    if not os.path.exists(idx) and os.path.exists(cal):
-        os.symlink("sports_calendar.html", idx)
+    # Warn if public/ is empty or missing index.html — build must run first
+    import sys
+    if not os.path.isfile(os.path.join(DIRECTORY, "index.html")):
+        print("WARNING: public/ is empty. Run build_calendar.py first to populate it.", file=sys.stderr)
 
     # Start local HTTP server in background thread
     t = threading.Thread(target=start_server, daemon=True)

@@ -30,9 +30,12 @@ Provides:
 """
 
 import json
+import logging
 import os
 import unicodedata
 import team_logos
+
+log = logging.getLogger(__name__)
 
 STANDINGS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "standings.json")
 
@@ -433,7 +436,12 @@ def classify_game(game):
 
     elif sport == "Soccer":
         if "mls next pro" in league_lower or "the town fc" in teams_str:
-            return "mls_next_pro_west"
+            log.warning(
+                "classify_game: 'mls_next_pro_west' key not in standings DB "
+                "(game id=%s); falling back to 'mls_west'",
+                game.get("id", "?")
+            )
+            return "mls_west"
         elif level == "Pro":
             if league == "NWSL":
                 return "nwsl"
@@ -453,11 +461,10 @@ def classify_game(game):
     elif sport == "Volleyball":
         return "ncaa_acc_volleyball"
 
-    import warnings
-    warnings.warn(
-        f"classify_game: unrecognized sport/level combination for game id={game.get('id', '?')}: "
-        f"sport={game.get('sport', '?')}, level={game.get('level', '?')} — defaulting to nfl_nfc_west",
-        stacklevel=2
+    log.error(
+        "classify_game: unrecognized sport/level combination for game id=%s: "
+        "sport=%s, level=%s — defaulting to nfl_nfc_west",
+        game.get("id", "?"), game.get("sport", "?"), game.get("level", "?")
     )
     return "nfl_nfc_west"
 

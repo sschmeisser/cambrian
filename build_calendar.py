@@ -9,8 +9,20 @@ import json
 import os
 import team_logos
 import league_standings
+from constants import SOUTH_BAY_CITIES
 
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "games.json")
+PUBLIC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "public")
+
+def _safe_json_for_script(data) -> str:
+    """Serialize data to JSON safe for embedding inside a <script> block."""
+    raw = json.dumps(data, ensure_ascii=False)
+    # Prevent </script> from terminating the script tag
+    raw = raw.replace('</', '<\\/')
+    # Escape Unicode line terminators that break JS string literals
+    raw = raw.replace('\u2028', '\\u2028')
+    raw = raw.replace('\u2029', '\\u2029')
+    return raw
 
 def load_data():
     """Load games and weeks metadata from data/games.json."""
@@ -37,17 +49,7 @@ def reload_data():
     GAMES_DATA, WEEKS_META = load_data()
     return GAMES_DATA, WEEKS_META
 
-SOUTH_BAY_CITIES = {
-    "San Jose",
-    "Campbell",
-    "Santa Clara",
-    "Cupertino",
-    "Mountain View",
-    "Stanford",
-    "Morgan Hill",
-    "Los Gatos",
-    "Saratoga"
-}
+
 
 def is_cambrian_game(g):
     """
@@ -381,9 +383,9 @@ def generate_html():
     active_games, active_weeks = prune_expired_cache(GAMES_DATA, WEEKS_META)
     normalized_games = normalize_games(active_games)
     normalized_weeks = normalize_weeks(active_weeks)
-    games_str = json.dumps(normalized_games)
-    weeks_str = json.dumps(normalized_weeks)
-    standings_str = json.dumps(get_standings_data())
+    games_str = _safe_json_for_script(normalized_games)
+    weeks_str = _safe_json_for_script(normalized_weeks)
+    standings_str = _safe_json_for_script(get_standings_data())
 
     tmpl_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "calendar_template.html")
     with open(tmpl_path, "r", encoding="utf-8") as f:
@@ -393,12 +395,13 @@ def generate_html():
                     .replace("__WEEKS_JSON__", weeks_str)
                     .replace("__STANDINGS_JSON__", standings_str))
 
-    out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sports_calendar.html")
+    out_path = os.path.join(PUBLIC_DIR, "sports_calendar.html")
+    os.makedirs(PUBLIC_DIR, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(rendered)
     print(f"Generated calendar: {out_path}")
 
-    index_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.html")
+    index_path = os.path.join(PUBLIC_DIR, "index.html")
     if os.path.islink(index_path):
         os.unlink(index_path)
     with open(index_path, "w", encoding="utf-8") as f:
