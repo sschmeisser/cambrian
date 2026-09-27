@@ -443,15 +443,7 @@ def main():
     ]
 
     # Junior College Football (CCCAA 3C2A) — Home Games Only
-    juco_schedule = [
-        {"date": "2026-09-26", "day_of_week": "Saturday", "time": "1:00 PM", "sport": "Football", "sport_icon": "🏈",
-         "league": "CCCAA / 3C2A", "level": "Junior College", "home_team": "San Jose City College Jaguars", "away_team": "Monterey Peninsula Lobos",
-         "venue": "Jaguar Stadium (SJCC)", "city": "San Jose", "badge": "🏈 Coast Conference South Opener",
-         "home_score": None, "away_score": None, "status": "upcoming",
-         "context_reason": "Fast, physical junior college football in downtown San Jose. Top transfer talent showcasing for Division I scouts.",
-         "insider_tips": "Free parking in the SJCC structure on Moorpark Ave for weekend games. Great view of downtown San Jose from the top bleachers.",
-         "importance": "standard", "ticket_text": "SJCC Athletics", "ticket_url": "https://sjcctickets.com"}
-    ]
+    juco_schedule = []
 
     # Build full game list
     final_games = []

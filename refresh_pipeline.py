@@ -804,7 +804,7 @@ def main():
             if args.commit:
                 log.info("Committing and pushing changes to GitHub...")
                 try:
-                    subprocess.run(["git", "add", "data/", "public/index.html", "public/sports_calendar.html"], check=True)
+                    subprocess.run(["git", "add", "data/", "index.html", "sports_calendar.html", "public/"], check=True)
                     commit_msg = f"chore(auto): refresh schedules, scores & standings [{datetime.date.today().isoformat()}]"
                     subprocess.run(["git", "commit", "-m", commit_msg], check=True)
                     subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)

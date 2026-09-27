@@ -395,20 +395,40 @@ def generate_html():
                     .replace("__WEEKS_JSON__", weeks_str)
                     .replace("__STANDINGS_JSON__", standings_str))
 
-    out_path = os.path.join(PUBLIC_DIR, "sports_calendar.html")
+    root_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # 1. Output to root directory (for GitHub Pages root hosting)
+    root_cal_path = os.path.join(root_dir, "sports_calendar.html")
+    if os.path.islink(root_cal_path):
+        os.unlink(root_cal_path)
+    with open(root_cal_path, "w", encoding="utf-8") as f:
+        f.write(rendered)
+    print(f"Generated calendar (root): {root_cal_path}")
+
+    root_index_path = os.path.join(root_dir, "index.html")
+    if os.path.islink(root_index_path):
+        os.unlink(root_index_path)
+    with open(root_index_path, "w", encoding="utf-8") as f:
+        f.write(rendered)
+    print(f"Synchronized index (root): {root_index_path}")
+
+    # 2. Output to public/ directory
     os.makedirs(PUBLIC_DIR, exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as f:
+    pub_cal_path = os.path.join(PUBLIC_DIR, "sports_calendar.html")
+    if os.path.islink(pub_cal_path):
+        os.unlink(pub_cal_path)
+    with open(pub_cal_path, "w", encoding="utf-8") as f:
         f.write(rendered)
-    print(f"Generated calendar: {out_path}")
+    print(f"Generated calendar (public): {pub_cal_path}")
 
-    index_path = os.path.join(PUBLIC_DIR, "index.html")
-    if os.path.islink(index_path):
-        os.unlink(index_path)
-    with open(index_path, "w", encoding="utf-8") as f:
+    pub_index_path = os.path.join(PUBLIC_DIR, "index.html")
+    if os.path.islink(pub_index_path):
+        os.unlink(pub_index_path)
+    with open(pub_index_path, "w", encoding="utf-8") as f:
         f.write(rendered)
-    print(f"Synchronized index: {index_path}")
+    print(f"Synchronized index (public): {pub_index_path}")
 
-    return out_path
+    return root_cal_path
 
 if __name__ == "__main__":
     generate_html()

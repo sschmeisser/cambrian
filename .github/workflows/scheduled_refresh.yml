@@ -73,7 +73,7 @@ jobs:
         run: |
           git config user.name "Gazette Refresh Bot"
           git config user.email "bot@bayareasportsgazette.local"
-          git add data/ index.html sports_calendar.html
+          git add data/ index.html sports_calendar.html public/ 2>/dev/null || true
           git commit -m "chore(auto): refresh scores, standings & calendar [$(date +'%Y-%m-%d %H:%M')]"
           git pull --rebase origin main
           git push origin main
