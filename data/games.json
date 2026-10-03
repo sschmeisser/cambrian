@@ -3279,6 +3279,47 @@
         "attire": "Comfortable light layers",
         "indoor": false
       }
+    },
+    {
+      "id": "w2-07",
+      "week": 2,
+      "date": "2026-10-04",
+      "day_of_week": "Sunday",
+      "time": "1:00 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "WNBA",
+      "level": "Pro",
+      "home_team": "Golden State Valkyries",
+      "away_team": "Las Vegas Aces",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "🏀 WNBA Hoops: Las Vegas Aces at Golden State Valkyries",
+      "context_reason": "Golden State Valkyries host Las Vegas Aces at Chase Center in an exciting WNBA contest.",
+      "insider_tips": "Take Muni T-Third light rail directly to Chase Center.",
+      "importance": "high",
+      "ticket_text": "Valkyries Tickets",
+      "ticket_url": "https://valkyries.wnba.com/tickets",
+      "recap_url": "https://www.espn.com/wnba/game/_/gameId/401918296/aces-valkyries",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "wnba",
+        "valkyries",
+        "womens sports"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
     }
   ]
 }
