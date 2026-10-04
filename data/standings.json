@@ -906,7 +906,7 @@
       {
         "rank": 4,
         "team": "Archbishop Mitty Monarchs",
-        "w": 7,
+        "w": 8,
         "l": 4,
         "col3": "4-3",
         "col4": "276",
@@ -925,16 +925,6 @@
       },
       {
         "rank": 6,
-        "team": "Bellarmine College Prep Bells",
-        "w": 5,
-        "l": 6,
-        "col3": "3-4",
-        "col4": "214",
-        "col5": "240",
-        "note": "CCS D1 Qualifier"
-      },
-      {
-        "rank": 7,
         "team": "Valley Christian Warriors",
         "w": 5,
         "l": 6,
@@ -942,6 +932,16 @@
         "col4": "198",
         "col5": "238",
         "note": ""
+      },
+      {
+        "rank": 7,
+        "team": "Bellarmine College Prep Bells",
+        "w": 5,
+        "l": 7,
+        "col3": "3-4",
+        "col4": "214",
+        "col5": "240",
+        "note": "CCS D1 Qualifier"
       },
       {
         "rank": 8,
@@ -1557,10 +1557,10 @@
       {
         "rank": 2,
         "team": "Santa Clara Broncos Men",
-        "w": 10,
+        "w": 11,
         "l": 4,
         "col3": 3,
-        "col4": "33",
+        "col4": 36,
         "col5": "+14",
         "note": "WCC Leader"
       },
