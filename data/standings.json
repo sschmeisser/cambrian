@@ -1032,22 +1032,22 @@
       },
       {
         "rank": 5,
-        "team": "Piedmont Hills Pirates",
-        "w": 0,
-        "l": 4,
-        "col3": "0-0",
-        "col4": "48",
-        "col5": "135",
-        "note": ""
-      },
-      {
-        "rank": 6,
         "team": "Branham High Bruins",
-        "w": 0,
+        "w": 1,
         "l": 5,
         "col3": "0-0",
         "col4": "89",
         "col5": "205",
+        "note": ""
+      },
+      {
+        "rank": 6,
+        "team": "Piedmont Hills Pirates",
+        "w": 0,
+        "l": 5,
+        "col3": "0-0",
+        "col4": "48",
+        "col5": "135",
         "note": ""
       }
     ]
