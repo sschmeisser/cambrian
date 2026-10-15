@@ -1566,6 +1566,16 @@
       },
       {
         "rank": 3,
+        "team": "California Golden Bears Men",
+        "w": 10,
+        "l": 5,
+        "col3": 4,
+        "col4": 34,
+        "col5": "+8",
+        "note": "ACC"
+      },
+      {
+        "rank": 4,
         "team": "Georgetown Hoyas",
         "w": 9,
         "l": 5,
@@ -1575,7 +1585,7 @@
         "note": "Big East Leader"
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Washington Huskies",
         "w": 9,
         "l": 5,
@@ -1583,16 +1593,6 @@
         "col4": "31",
         "col5": "+10",
         "note": "Big Ten"
-      },
-      {
-        "rank": 5,
-        "team": "California Golden Bears Men",
-        "w": 9,
-        "l": 5,
-        "col3": 4,
-        "col4": 31,
-        "col5": "+8",
-        "note": "ACC"
       },
       {
         "rank": 6,
