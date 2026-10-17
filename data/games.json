@@ -2221,9 +2221,9 @@
       "venue": "Branham Stadium",
       "city": "San Jose",
       "badge": "🏆 The Campbell Union District Derby / Cambrian Derby",
-      "home_score": null,
-      "away_score": null,
-      "status": "upcoming",
+      "home_score": 40,
+      "away_score": 13,
+      "status": "final",
       "context_reason": "The defining neighborhood rivalry of Cambrian Park! Branham and Leigh battle for south San Jose bragging rights under the Camden Avenue lights.",
       "insider_tips": "The biggest crowd of the season on Camden Avenue. Walk or bike from Cambrian Park neighborhoods if possible to avoid parking gridlock.",
       "importance": "marquee",
@@ -2244,7 +2244,8 @@
         "icon": "🌙",
         "attire": "Warm jacket advised",
         "indoor": false
-      }
+      },
+      "result_summary": "The Branham Bruins defeated the Leigh Longhorns with a final score of 40-13. This win brought Branham's scoring average up to 26.4 points per game and ended a three-game home drought, improving their record to 2-5. Leigh's record also stands at 2-5 after this loss, having lost four of their last five matchups. The game was played at Branham High School on October 16, 2026."
     },
     {
       "date": "2026-10-16",

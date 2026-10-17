@@ -1022,22 +1022,22 @@
       },
       {
         "rank": 4,
-        "team": "Leigh High Longhorns",
-        "w": 1,
-        "l": 4,
-        "col3": "0-0",
-        "col4": "78",
-        "col5": "142",
-        "note": ""
-      },
-      {
-        "rank": 5,
         "team": "Branham High Bruins",
-        "w": 1,
+        "w": 2,
         "l": 5,
         "col3": "0-0",
         "col4": "89",
         "col5": "205",
+        "note": ""
+      },
+      {
+        "rank": 5,
+        "team": "Leigh High Longhorns",
+        "w": 1,
+        "l": 5,
+        "col3": "0-0",
+        "col4": "78",
+        "col5": "142",
         "note": ""
       },
       {
