@@ -583,8 +583,8 @@
         "team": "Portland Thorns FC",
         "w": 10,
         "l": 11,
-        "col3": 3,
-        "col4": "33",
+        "col3": 4,
+        "col4": 34,
         "col5": "+3",
         "note": "Playoff Spot"
       },
@@ -593,8 +593,8 @@
         "team": "Bay FC",
         "w": 10,
         "l": 14,
-        "col3": 1,
-        "col4": 31,
+        "col3": 2,
+        "col4": 32,
         "col5": "-7",
         "note": "Playoff Line"
       },
@@ -1569,8 +1569,8 @@
         "team": "California Golden Bears Men",
         "w": 10,
         "l": 5,
-        "col3": 5,
-        "col4": 35,
+        "col3": 6,
+        "col4": 36,
         "col5": "+8",
         "note": "ACC"
       },
