@@ -3486,6 +3486,88 @@
         "attire": "Layers recommended",
         "indoor": false
       }
+    },
+    {
+      "id": "w6-15",
+      "week": 6,
+      "date": "2026-10-30",
+      "day_of_week": "Friday",
+      "time": "6:00 PM",
+      "sport": "Soccer",
+      "sport_icon": "⚽",
+      "league": "NCAA Division I",
+      "level": "College",
+      "home_team": "Stanford",
+      "away_team": "California",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Cagan Stadium",
+      "city": "Stanford",
+      "badge": "🌲 Stanford Cardinal: California at Stanford",
+      "context_reason": "Stanford Cardinal host California in collegiate action.",
+      "insider_tips": "Park early and walk through the historic Stanford eucalyptus groves.",
+      "importance": "standard",
+      "ticket_text": "Broncos Tickets",
+      "ticket_url": "https://santaclarabroncos.com/tickets",
+      "recap_url": "https://santaclarabroncos.com/tickets",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "soccer",
+        "college",
+        "south bay"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w6-16",
+      "week": 6,
+      "date": "2026-11-01",
+      "day_of_week": "Sunday",
+      "time": "5:30 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "level": "Pro",
+      "home_team": "Golden State Warriors",
+      "away_team": "LA Clippers",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "🏀 Warriors Hoops: LA Clippers at Warriors",
+      "context_reason": "Golden State Warriors host LA Clippers at Chase Center.",
+      "insider_tips": "Take Muni T-Third light rail directly to Chase Center.",
+      "importance": "high",
+      "ticket_text": "Warriors Tickets",
+      "ticket_url": "https://www.nba.com/warriors/tickets",
+      "recap_url": "https://www.espn.com/nba/game/_/gameId/401909905/clippers-warriors",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "nba",
+        "warriors",
+        "chase center",
+        "san francisco"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
     }
   ]
 }
