@@ -2580,9 +2580,9 @@
       "venue": "Branham Stadium",
       "city": "San Jose",
       "badge": "👑 Branham Homecoming Night 2026",
-      "home_score": null,
-      "away_score": null,
-      "status": "upcoming",
+      "home_score": 23,
+      "away_score": 35,
+      "status": "final",
       "context_reason": "The biggest social and athletic event on the Cambrian Park calendar! Royalty crowning, alumni reunions, and a critical league game.",
       "insider_tips": "Arrive before 6:30 PM to secure bleacher seating. The halftime fireworks and float procession draw over 3,000 spectators.",
       "importance": "marquee",
@@ -2603,7 +2603,8 @@
         "icon": "🌙",
         "attire": "Warm jacket advised",
         "indoor": false
-      }
+      },
+      "result_summary": "Santa Teresa spoiled Branham's Homecoming festivities on Camden Avenue, securing a 35-23 league victory despite the Bruins' spirited effort in front of a packed house."
     },
     {
       "date": "2026-10-23",
