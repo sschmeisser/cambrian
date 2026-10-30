@@ -1546,6 +1546,16 @@
     "rows": [
       {
         "rank": 1,
+        "team": "Stanford Cardinal Men",
+        "w": 13,
+        "l": 4,
+        "col3": 6,
+        "col4": 45,
+        "col5": "+24",
+        "note": "NCAA Contender"
+      },
+      {
+        "rank": 2,
         "team": "Santa Clara Broncos Men",
         "w": 13,
         "l": 4,
@@ -1555,20 +1565,10 @@
         "note": "WCC Leader"
       },
       {
-        "rank": 2,
-        "team": "Stanford Cardinal Men",
-        "w": 12,
-        "l": 4,
-        "col3": 6,
-        "col4": 42,
-        "col5": "+24",
-        "note": "NCAA Contender"
-      },
-      {
         "rank": 3,
         "team": "California Golden Bears Men",
         "w": 10,
-        "l": 7,
+        "l": 8,
         "col3": 6,
         "col4": 36,
         "col5": "+8",
