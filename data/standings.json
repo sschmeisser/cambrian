@@ -438,8 +438,8 @@
         "team": "Real Salt Lake",
         "w": 16,
         "l": 7,
-        "col3": 10,
-        "col4": "58",
+        "col3": 11,
+        "col4": 59,
         "col5": "+15",
         "note": "Home Playoff"
       },
@@ -485,16 +485,6 @@
       },
       {
         "rank": 8,
-        "team": "Portland Timbers",
-        "w": 12,
-        "l": 11,
-        "col3": 10,
-        "col4": "46",
-        "col5": "+9",
-        "note": "Wild Card"
-      },
-      {
-        "rank": 9,
         "team": "Vancouver Whitecaps",
         "w": 13,
         "l": 13,
@@ -504,12 +494,22 @@
         "note": "Wild Card"
       },
       {
+        "rank": 9,
+        "team": "Portland Timbers",
+        "w": 12,
+        "l": 11,
+        "col3": 10,
+        "col4": "46",
+        "col5": "+9",
+        "note": "Wild Card"
+      },
+      {
         "rank": 10,
         "team": "San Jose Earthquakes",
         "w": 9,
         "l": 19,
-        "col3": 5,
-        "col4": "32",
+        "col3": 6,
+        "col4": 33,
         "col5": "-22",
         "note": ""
       }
@@ -1548,7 +1548,7 @@
         "rank": 1,
         "team": "Stanford Cardinal Men",
         "w": 13,
-        "l": 4,
+        "l": 5,
         "col3": 6,
         "col4": 45,
         "col5": "+24",
@@ -1567,10 +1567,10 @@
       {
         "rank": 3,
         "team": "California Golden Bears Men",
-        "w": 10,
+        "w": 11,
         "l": 8,
         "col3": 6,
-        "col4": 36,
+        "col4": 39,
         "col5": "+8",
         "note": "ACC"
       },
