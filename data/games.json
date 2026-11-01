@@ -2979,9 +2979,9 @@
       "venue": "Pat Tillman Stadium",
       "city": "San Jose",
       "badge": "⚡ Cambrian vs. Almaden Valley Rivalry",
-      "home_score": null,
-      "away_score": null,
-      "status": "upcoming",
+      "home_score": 16,
+      "away_score": 26,
+      "status": "final",
       "context_reason": "Branham travels to Almaden Valley to take on the Chargers at historic Pat Tillman Stadium in a crucial late-season BVAL battle.",
       "insider_tips": "Pat Tillman Stadium at Leland High offers picturesque foothill views; bleacher seating is ample on the visitors' side.",
       "importance": "high",
@@ -3002,7 +3002,8 @@
         "icon": "🌙",
         "attire": "Warm jacket advised",
         "indoor": false
-      }
+      },
+      "result_summary": "On 10/30/2026, the Branham varsity football team won their away conference game against Leland (San Jose, CA) by a score of 26-16. Branham advances its record to 3-6 on the season, while Leland now owns a 3-6 record."
     },
     {
       "date": "2026-10-30",

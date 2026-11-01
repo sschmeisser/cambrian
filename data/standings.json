@@ -1004,7 +1004,7 @@
         "rank": 2,
         "team": "Leland Chargers",
         "w": 3,
-        "l": 1,
+        "l": 2,
         "col3": "0-0",
         "col4": "140",
         "col5": "85",
@@ -1012,22 +1012,22 @@
       },
       {
         "rank": 3,
+        "team": "Branham High Bruins",
+        "w": 3,
+        "l": 6,
+        "col3": "0-0",
+        "col4": "89",
+        "col5": "205",
+        "note": ""
+      },
+      {
+        "rank": 4,
         "team": "Pioneer Mustangs",
         "w": 1,
         "l": 2,
         "col3": "0-0",
         "col4": "58",
         "col5": "75",
-        "note": ""
-      },
-      {
-        "rank": 4,
-        "team": "Branham High Bruins",
-        "w": 2,
-        "l": 6,
-        "col3": "0-0",
-        "col4": "89",
-        "col5": "205",
         "note": ""
       },
       {
