@@ -329,10 +329,10 @@
       {
         "rank": 1,
         "team": "Golden State Warriors",
-        "w": 0,
+        "w": 1,
         "l": 0,
         "col3": "—",
-        "col4": ".000",
+        "col4": "1.000",
         "col5": "—",
         "note": "Preseason Opener Oct 4"
       },
@@ -1548,7 +1548,7 @@
         "rank": 1,
         "team": "Stanford Cardinal Men",
         "w": 13,
-        "l": 5,
+        "l": 6,
         "col3": 6,
         "col4": 45,
         "col5": "+24",
