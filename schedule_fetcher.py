@@ -586,13 +586,19 @@ def sync_schedule_for_window(
         # Find current or upcoming week range
         matched_weeks = [w for w in weeks if w.get("start_date") and w.get("end_date")]
         if matched_weeks:
-            # Span from current week to rolling next week
-            curr_week = next((w for w in matched_weeks if w.get("start_date") <= today_iso <= w.get("end_date")), matched_weeks[0])
-            start_date = curr_week.get("start_date")
-            end_date = curr_week.get("end_date")
+            curr_week = next((w for w in matched_weeks if w.get("start_date") <= today_iso <= w.get("end_date")), None)
+            if not start_date:
+                if curr_week and curr_week.get("start_date"):
+                    start_date = curr_week.get("start_date")
+                else:
+                    start_date = (datetime.now(PACIFIC_TZ).date() - timedelta(days=7)).isoformat()
+            if not end_date:
+                end_date = matched_weeks[-1].get("end_date")
         else:
-            start_date = (datetime.now(PACIFIC_TZ).date() - timedelta(days=7)).isoformat()
-            end_date = (datetime.now(PACIFIC_TZ).date() + timedelta(days=7)).isoformat()
+            if not start_date:
+                start_date = (datetime.now(PACIFIC_TZ).date() - timedelta(days=7)).isoformat()
+            if not end_date:
+                end_date = (datetime.now(PACIFIC_TZ).date() + timedelta(days=21)).isoformat()
 
     discovered = discover_bay_area_games(start_date, end_date, home_only=True)
     new_count = 0
@@ -649,12 +655,23 @@ def sync_schedule_for_window(
                 if w_start <= g_date <= w_end:
                     target_week = w
                     break
+            if not target_week and weeks:
+                if g_date > weeks[-1].get("end_date", ""):
+                    target_week = weeks[-1]
+                elif g_date < weeks[0].get("start_date", ""):
+                    target_week = weeks[0]
+                else:
+                    target_week = weeks[-1]
             week_num = target_week.get("num", 1) if target_week else 1
 
-            # Generate new sequential ID
+            # Generate unique sequential ID
+            existing_ids = set(g.get("id") for g in games)
             week_games = [g for g in games if g.get("week") == week_num]
             next_idx = len(week_games) + 1
             new_id = f"w{week_num}-{next_idx:02d}"
+            while new_id in existing_ids:
+                next_idx += 1
+                new_id = f"w{week_num}-{next_idx:02d}"
 
             is_completed = dg.get("is_completed", False)
             h_score = int(dg["home_score"]) if is_completed and dg.get("home_score") is not None else None

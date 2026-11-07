@@ -2577,7 +2577,7 @@
       </div>
       <div class="current-week-wrapper">
         <div class="current-week-title" id="currentWeekTitle">
-          <span class="week-badge current-badge">THIS WEEK</span> Sep 21 – Sep 27, 2026
+          __CURRENT_WEEK_TITLE__
         </div>
         <button class="return-this-week-btn" id="returnThisWeekBtn" style="display: none;" title="Return to current week">
           ↩ This Week
@@ -2871,18 +2871,25 @@
       counter.textContent = myPlanIds.length;
     }
 
-    // Determine client's today in YYYY-MM-DD
+    // Determine client's today in YYYY-MM-DD (evaluated in Pacific Time)
     function getClientTodayIso() {
-      const d = new Date();
-      const yr = d.getFullYear();
-      const mo = String(d.getMonth() + 1).padStart(2, '0');
-      const da = String(d.getDate()).padStart(2, '0');
-      return `${yr}-${mo}-${da}`;
+      try {
+        return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
+      } catch (e) {
+        const d = new Date();
+        const yr = d.getFullYear();
+        const mo = String(d.getMonth() + 1).padStart(2, '0');
+        const da = String(d.getDate()).padStart(2, '0');
+        return `${yr}-${mo}-${da}`;
+      }
     }
     const todayIso = getClientTodayIso();
 
     // Resolve "This Week" (the week containing today)
     function resolveThisWeekNum() {
+      if (!WEEKS_META || WEEKS_META.length === 0) return 1;
+
+      // 1. Check if todayIso falls within w.start_date and w.end_date for any week
       for (const w of WEEKS_META) {
         const s = w.start_date || (w.days && w.days[0] && w.days[0].date);
         const e = w.end_date || (w.days && w.days[w.days.length - 1] && w.days[w.days.length - 1].date);
@@ -2890,15 +2897,48 @@
           return w.num;
         }
       }
-      const first = WEEKS_META[0];
-      const firstStart = first.start_date || (first.days && first.days[0] && first.days[0].date);
-      if (firstStart && todayIso < firstStart) {
-        return first.num;
+
+      // 2. If todayIso > lastWeek.end_date, return lastWeek.num (NEVER fall back to Week 1!)
+      const lastWeek = WEEKS_META[WEEKS_META.length - 1];
+      const lastEnd = lastWeek.end_date || (lastWeek.days && lastWeek.days[lastWeek.days.length - 1] && lastWeek.days[lastWeek.days.length - 1].date);
+      if (lastEnd && todayIso > lastEnd) {
+        return lastWeek.num;
       }
+
+      // 3. If todayIso < firstWeek.start_date, return firstWeek.num
+      const firstWeek = WEEKS_META[0];
+      const firstStart = firstWeek.start_date || (firstWeek.days && firstWeek.days[0] && firstWeek.days[0].date);
+      if (firstStart && todayIso < firstStart) {
+        return firstWeek.num;
+      }
+
+      // 4. Check w.is_current
       const cur = WEEKS_META.find(w => w.is_current);
       if (cur) return cur.num;
-      const w1 = WEEKS_META.find(w => w.num === 1);
-      return w1 ? w1.num : WEEKS_META[0].num;
+
+      // 5. If no match, find week closest to todayIso, or lastWeek.num (no hardcoded w.num === 1 fallback)
+      let closestWeek = lastWeek;
+      let minDiff = Infinity;
+      const todayTime = new Date(todayIso).getTime();
+      for (const w of WEEKS_META) {
+        const s = w.start_date || (w.days && w.days[0] && w.days[0].date);
+        const e = w.end_date || (w.days && w.days[w.days.length - 1] && w.days[w.days.length - 1].date);
+        if (s) {
+          const sDiff = Math.abs(todayTime - new Date(s).getTime());
+          if (sDiff < minDiff) {
+            minDiff = sDiff;
+            closestWeek = w;
+          }
+        }
+        if (e) {
+          const eDiff = Math.abs(todayTime - new Date(e).getTime());
+          if (eDiff < minDiff) {
+            minDiff = eDiff;
+            closestWeek = w;
+          }
+        }
+      }
+      return closestWeek ? closestWeek.num : lastWeek.num;
     }
 
     const thisWeekNum = resolveThisWeekNum();

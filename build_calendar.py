@@ -7,6 +7,8 @@ Rolling Scores, and Standalone HTML Generation.
 
 import json
 import os
+import datetime
+from zoneinfo import ZoneInfo
 import team_logos
 import league_standings
 from constants import SOUTH_BAY_CITIES
@@ -305,9 +307,8 @@ def get_standings_data():
     return st_data
 
 def normalize_weeks(weeks):
-    import datetime
     normalized = []
-    today = datetime.date.today()
+    today = datetime.datetime.now(ZoneInfo("America/Los_Angeles")).date()
     today_iso = today.isoformat()
     for w in weeks:
         item = dict(w)
@@ -352,9 +353,8 @@ def prune_expired_cache(games, weeks, retention_weeks=CACHE_RETENTION_WEEKS, ref
     - Retain up to 52 past weeks from reference date (default: today).
     - Older weeks and games roll off cleanly.
     """
-    import datetime
     if not reference_date:
-        ref_dt = datetime.date.today()
+        ref_dt = datetime.datetime.now(ZoneInfo("America/Los_Angeles")).date()
     elif isinstance(reference_date, str):
         ref_dt = datetime.date.fromisoformat(reference_date)
     else:
@@ -387,13 +387,35 @@ def generate_html():
     weeks_str = _safe_json_for_script(normalized_weeks)
     standings_str = _safe_json_for_script(get_standings_data())
 
+    # Determine current week for static header injection
+    current_week = next((w for w in normalized_weeks if w.get("is_current")), None)
+    if not current_week and normalized_weeks:
+        today_iso = datetime.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+        if today_iso > normalized_weeks[-1].get("end_date", ""):
+            current_week = normalized_weeks[-1]
+        elif today_iso < normalized_weeks[0].get("start_date", ""):
+            current_week = normalized_weeks[0]
+        else:
+            current_week = normalized_weeks[-1]
+
+    if current_week:
+        if current_week.get("is_current"):
+            current_week_title = f'<span class="week-badge current-badge">THIS WEEK</span> {current_week.get("dates", "")}'
+        elif current_week.get("is_past"):
+            current_week_title = f'<span class="week-badge past-badge">CACHED ARCHIVE</span> {current_week.get("dates", "")} • Final Scores & Recaps'
+        else:
+            current_week_title = f'<span class="week-badge upcoming-badge">UPCOMING</span> {current_week.get("dates", "")}'
+    else:
+        current_week_title = '<span class="week-badge current-badge">THIS WEEK</span>'
+
     tmpl_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "calendar_template.html")
     with open(tmpl_path, "r", encoding="utf-8") as f:
         tmpl = f.read()
 
     rendered = (tmpl.replace("__GAMES_JSON__", games_str)
                     .replace("__WEEKS_JSON__", weeks_str)
-                    .replace("__STANDINGS_JSON__", standings_str))
+                    .replace("__STANDINGS_JSON__", standings_str)
+                    .replace("__CURRENT_WEEK_TITLE__", current_week_title))
 
     root_dir = os.path.dirname(os.path.abspath(__file__))
 

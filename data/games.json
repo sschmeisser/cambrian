@@ -55,7 +55,7 @@
       "start_date": "2026-09-21",
       "end_date": "2026-09-27",
       "title": "Fall Kickoff & WCAL Holy War",
-      "is_past": false,
+      "is_past": true,
       "days": [
         {
           "date": "2026-09-21",
@@ -102,7 +102,7 @@
       "start_date": "2026-09-28",
       "end_date": "2026-10-04",
       "title": "Broncos at Levi's Stadium & Sharks Home Opener",
-      "is_past": false,
+      "is_past": true,
       "days": [
         {
           "date": "2026-09-28",
@@ -149,7 +149,7 @@
       "start_date": "2026-10-05",
       "end_date": "2026-10-11",
       "title": "Warriors Preseason Tip-Off & McDavid at SAP Center",
-      "is_past": false,
+      "is_past": true,
       "days": [
         {
           "date": "2026-10-05",
@@ -196,7 +196,7 @@
       "start_date": "2026-10-12",
       "end_date": "2026-10-18",
       "title": "The Campbell District Derby & MLS Decision Day",
-      "is_past": false,
+      "is_past": true,
       "days": [
         {
           "date": "2026-10-12",
@@ -243,7 +243,7 @@
       "start_date": "2026-10-19",
       "end_date": "2026-10-25",
       "title": "Branham Homecoming & Monday Night Football at Levi's",
-      "is_past": false,
+      "is_past": true,
       "days": [
         {
           "date": "2026-10-19",
@@ -290,7 +290,7 @@
       "start_date": "2026-10-26",
       "end_date": "2026-11-01",
       "title": "Halloween at The Shark Tank & Branham Title Decider",
-      "is_past": false,
+      "is_past": true,
       "days": [
         {
           "date": "2026-10-26",
@@ -326,6 +326,194 @@
           "date": "2026-11-01",
           "name": "Sunday",
           "short": "Sun Nov 01"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "label": "Nov 2 – 8",
+      "dates": "Nov 2 – Nov 8, 2026",
+      "short_dates": "Nov 2 – 8",
+      "start_date": "2026-11-02",
+      "end_date": "2026-11-08",
+      "title": "Mid-Season Action & Regional Showcases (Nov 2 – 8)",
+      "is_past": false,
+      "days": [
+        {
+          "date": "2026-11-02",
+          "name": "Monday",
+          "short": "Mon Nov 02"
+        },
+        {
+          "date": "2026-11-03",
+          "name": "Tuesday",
+          "short": "Tue Nov 03"
+        },
+        {
+          "date": "2026-11-04",
+          "name": "Wednesday",
+          "short": "Wed Nov 04"
+        },
+        {
+          "date": "2026-11-05",
+          "name": "Thursday",
+          "short": "Thu Nov 05"
+        },
+        {
+          "date": "2026-11-06",
+          "name": "Friday",
+          "short": "Fri Nov 06"
+        },
+        {
+          "date": "2026-11-07",
+          "name": "Saturday",
+          "short": "Sat Nov 07"
+        },
+        {
+          "date": "2026-11-08",
+          "name": "Sunday",
+          "short": "Sun Nov 08"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "label": "Nov 9 – 15",
+      "dates": "Nov 9 – Nov 15, 2026",
+      "short_dates": "Nov 9 – 15",
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-15",
+      "title": "Mid-Season Action & Regional Showcases (Nov 9 – 15)",
+      "is_past": false,
+      "days": [
+        {
+          "date": "2026-11-09",
+          "name": "Monday",
+          "short": "Mon Nov 09"
+        },
+        {
+          "date": "2026-11-10",
+          "name": "Tuesday",
+          "short": "Tue Nov 10"
+        },
+        {
+          "date": "2026-11-11",
+          "name": "Wednesday",
+          "short": "Wed Nov 11"
+        },
+        {
+          "date": "2026-11-12",
+          "name": "Thursday",
+          "short": "Thu Nov 12"
+        },
+        {
+          "date": "2026-11-13",
+          "name": "Friday",
+          "short": "Fri Nov 13"
+        },
+        {
+          "date": "2026-11-14",
+          "name": "Saturday",
+          "short": "Sat Nov 14"
+        },
+        {
+          "date": "2026-11-15",
+          "name": "Sunday",
+          "short": "Sun Nov 15"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "label": "Nov 16 – 22",
+      "dates": "Nov 16 – Nov 22, 2026",
+      "short_dates": "Nov 16 – 22",
+      "start_date": "2026-11-16",
+      "end_date": "2026-11-22",
+      "title": "Mid-Season Action & Regional Showcases (Nov 16 – 22)",
+      "is_past": false,
+      "days": [
+        {
+          "date": "2026-11-16",
+          "name": "Monday",
+          "short": "Mon Nov 16"
+        },
+        {
+          "date": "2026-11-17",
+          "name": "Tuesday",
+          "short": "Tue Nov 17"
+        },
+        {
+          "date": "2026-11-18",
+          "name": "Wednesday",
+          "short": "Wed Nov 18"
+        },
+        {
+          "date": "2026-11-19",
+          "name": "Thursday",
+          "short": "Thu Nov 19"
+        },
+        {
+          "date": "2026-11-20",
+          "name": "Friday",
+          "short": "Fri Nov 20"
+        },
+        {
+          "date": "2026-11-21",
+          "name": "Saturday",
+          "short": "Sat Nov 21"
+        },
+        {
+          "date": "2026-11-22",
+          "name": "Sunday",
+          "short": "Sun Nov 22"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "label": "Nov 23 – 29",
+      "dates": "Nov 23 – Nov 29, 2026",
+      "short_dates": "Nov 23 – 29",
+      "start_date": "2026-11-23",
+      "end_date": "2026-11-29",
+      "title": "Mid-Season Action & Regional Showcases (Nov 23 – 29)",
+      "is_past": false,
+      "days": [
+        {
+          "date": "2026-11-23",
+          "name": "Monday",
+          "short": "Mon Nov 23"
+        },
+        {
+          "date": "2026-11-24",
+          "name": "Tuesday",
+          "short": "Tue Nov 24"
+        },
+        {
+          "date": "2026-11-25",
+          "name": "Wednesday",
+          "short": "Wed Nov 25"
+        },
+        {
+          "date": "2026-11-26",
+          "name": "Thursday",
+          "short": "Thu Nov 26"
+        },
+        {
+          "date": "2026-11-27",
+          "name": "Friday",
+          "short": "Fri Nov 27"
+        },
+        {
+          "date": "2026-11-28",
+          "name": "Saturday",
+          "short": "Sat Nov 28"
+        },
+        {
+          "date": "2026-11-29",
+          "name": "Sunday",
+          "short": "Sun Nov 29"
         }
       ]
     }
@@ -3684,6 +3872,794 @@
         "soccer",
         "college",
         "south bay"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w7-01",
+      "week": 7,
+      "date": "2026-11-02",
+      "day_of_week": "Monday",
+      "time": "6:00 PM",
+      "sport": "Hockey",
+      "sport_icon": "🏒",
+      "league": "NHL",
+      "level": "Pro",
+      "home_team": "San Jose Sharks",
+      "away_team": "Calgary Flames",
+      "home_score": 1,
+      "away_score": 2,
+      "status": "final",
+      "venue": "SAP Center",
+      "city": "San Jose",
+      "badge": "⭐ Pacific Division Clash: Calgary Flames vs Sharks",
+      "context_reason": "Hockey returns to SAP Center as San Jose's dynamic young core tests their chemistry against Calgary Flames.",
+      "insider_tips": "Diridon Station is right across Autumn Street from the arena — ride Caltrain or VTA Light Rail to skip parking. San Pedro Square Market is ideal for pregame dinner.",
+      "importance": "high",
+      "ticket_text": "Sharks Tickets",
+      "ticket_url": "https://www.nhl.com/sharks/tickets",
+      "recap_url": "https://www.espn.com/nhl/game/_/gameId/401892632/flames-sharks",
+      "result_summary": "Calgary Flames secured an emphatic 2-1 victory over San Jose Sharks at SAP Center.",
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "hockey",
+        "nhl",
+        "sharks",
+        "south bay",
+        "san jose"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w7-02",
+      "week": 7,
+      "date": "2026-11-02",
+      "day_of_week": "Monday",
+      "time": "7:00 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "level": "Pro",
+      "home_team": "Golden State Warriors",
+      "away_team": "Phoenix Suns",
+      "home_score": 116,
+      "away_score": 113,
+      "status": "final",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "🏀 Warriors Hoops: Phoenix Suns at Warriors",
+      "context_reason": "Golden State Warriors host Phoenix Suns at Chase Center.",
+      "insider_tips": "Take Muni T-Third light rail directly to Chase Center.",
+      "importance": "high",
+      "ticket_text": "Warriors Tickets",
+      "ticket_url": "https://www.nba.com/warriors/tickets",
+      "recap_url": "https://www.espn.com/nba/game/_/gameId/401909919/suns-warriors",
+      "result_summary": "Golden State Warriors secured an emphatic 116-113 victory over Phoenix Suns at Chase Center.",
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "nba",
+        "warriors",
+        "chase center",
+        "san francisco"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w7-03",
+      "week": 7,
+      "date": "2026-11-05",
+      "day_of_week": "Thursday",
+      "time": "7:00 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "level": "Pro",
+      "home_team": "Golden State Warriors",
+      "away_team": "Miami Heat",
+      "home_score": 120,
+      "away_score": 100,
+      "status": "final",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "🏀 Warriors Hoops: Miami Heat at Warriors",
+      "context_reason": "Golden State Warriors host Miami Heat at Chase Center.",
+      "insider_tips": "Take Muni T-Third light rail directly to Chase Center.",
+      "importance": "high",
+      "ticket_text": "Warriors Tickets",
+      "ticket_url": "https://www.nba.com/warriors/tickets",
+      "recap_url": "https://www.espn.com/nba/game/_/gameId/401909937/heat-warriors",
+      "result_summary": "Golden State Warriors secured an emphatic 120-100 victory over Miami Heat at Chase Center.",
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "nba",
+        "warriors",
+        "chase center",
+        "san francisco"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w7-04",
+      "week": 7,
+      "date": "2026-11-07",
+      "day_of_week": "Saturday",
+      "time": "5:30 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "level": "Pro",
+      "home_team": "Golden State Warriors",
+      "away_team": "Orlando Magic",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "🏀 Warriors Hoops: Orlando Magic at Warriors",
+      "context_reason": "Golden State Warriors host Orlando Magic at Chase Center.",
+      "insider_tips": "Take Muni T-Third light rail directly to Chase Center.",
+      "importance": "high",
+      "ticket_text": "Warriors Tickets",
+      "ticket_url": "https://www.nba.com/warriors/tickets",
+      "recap_url": "https://www.espn.com/nba/game/_/gameId/401909942/magic-warriors",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "nba",
+        "warriors",
+        "chase center",
+        "san francisco"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w7-05",
+      "week": 7,
+      "date": "2026-11-07",
+      "day_of_week": "Saturday",
+      "time": "1:00 PM",
+      "sport": "Football",
+      "sport_icon": "🏈",
+      "league": "NCAA FBS",
+      "level": "College",
+      "home_team": "San José State Spartans",
+      "away_team": "Northern Illinois Huskies",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "CEFCU Stadium",
+      "city": "San Jose",
+      "badge": "⚔️ Spartan Athletics: Northern Illinois Huskies at SJSU",
+      "context_reason": "San Jose State Spartans host Northern Illinois Huskies in South Bay collegiate action.",
+      "insider_tips": "Park at the South Campus lots off 7th Street.",
+      "importance": "standard",
+      "ticket_text": "Spartans Tickets",
+      "ticket_url": "https://sjsuspartans.com/tickets",
+      "recap_url": "https://www.espn.com/college-football/game/_/gameId/401864534/n-illinois-san-jose-st",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "football",
+        "college",
+        "south bay"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w7-06",
+      "week": 7,
+      "date": "2026-11-08",
+      "day_of_week": "Sunday",
+      "time": "1:25 PM",
+      "sport": "Football",
+      "sport_icon": "🏈",
+      "league": "NFL",
+      "level": "Pro",
+      "home_team": "San Francisco 49ers",
+      "away_team": "Las Vegas Raiders",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara",
+      "badge": "🏈 NFC Showdown: Las Vegas Raiders at 49ers",
+      "context_reason": "The 49ers host Las Vegas Raiders at Levi's Stadium in a pivotal regular season clash.",
+      "insider_tips": "Take the VTA Orange Line light rail directly to the Great America station outside Intel Gate A.",
+      "importance": "high",
+      "ticket_text": "49ers Tickets",
+      "ticket_url": "https://www.49ers.com/tickets",
+      "recap_url": "https://www.espn.com/nfl/game/_/gameId/401873047/raiders-49ers",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "football",
+        "nfl",
+        "49ers",
+        "south bay",
+        "santa clara"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w7-07",
+      "week": 7,
+      "date": "2026-11-08",
+      "day_of_week": "Sunday",
+      "time": "3:00 PM",
+      "sport": "Soccer",
+      "sport_icon": "⚽",
+      "league": "NCAA Division I",
+      "level": "College",
+      "home_team": "Stanford",
+      "away_team": "Syracuse",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Cagan Stadium",
+      "city": "Stanford",
+      "badge": "🌲 Stanford Cardinal: Syracuse at Stanford",
+      "context_reason": "Stanford Cardinal host Syracuse in collegiate action.",
+      "insider_tips": "Park early and walk through the historic Stanford eucalyptus groves.",
+      "importance": "standard",
+      "ticket_text": "Broncos Tickets",
+      "ticket_url": "https://santaclarabroncos.com/tickets",
+      "recap_url": "https://santaclarabroncos.com/tickets",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "soccer",
+        "college",
+        "south bay"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w8-01",
+      "week": 8,
+      "date": "2026-11-09",
+      "day_of_week": "Monday",
+      "time": "7:00 PM",
+      "sport": "Hockey",
+      "sport_icon": "🏒",
+      "league": "NHL",
+      "level": "Pro",
+      "home_team": "San Jose Sharks",
+      "away_team": "New York Islanders",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "SAP Center",
+      "city": "San Jose",
+      "badge": "⭐ Pacific Division Clash: New York Islanders vs Sharks",
+      "context_reason": "Hockey returns to SAP Center as San Jose's dynamic young core tests their chemistry against New York Islanders.",
+      "insider_tips": "Diridon Station is right across Autumn Street from the arena — ride Caltrain or VTA Light Rail to skip parking. San Pedro Square Market is ideal for pregame dinner.",
+      "importance": "high",
+      "ticket_text": "Sharks Tickets",
+      "ticket_url": "https://www.nhl.com/sharks/tickets",
+      "recap_url": "https://www.espn.com/nhl/game/_/gameId/401892682/islanders-sharks",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "hockey",
+        "nhl",
+        "sharks",
+        "south bay",
+        "san jose"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w8-02",
+      "week": 8,
+      "date": "2026-11-09",
+      "day_of_week": "Monday",
+      "time": "7:00 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "level": "Pro",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "🏀 Warriors Hoops: New Orleans Pelicans at Warriors",
+      "context_reason": "Golden State Warriors host New Orleans Pelicans at Chase Center.",
+      "insider_tips": "Take Muni T-Third light rail directly to Chase Center.",
+      "importance": "high",
+      "ticket_text": "Warriors Tickets",
+      "ticket_url": "https://www.nba.com/warriors/tickets",
+      "recap_url": "https://www.espn.com/nba/game/_/gameId/401909959/pelicans-warriors",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "nba",
+        "warriors",
+        "chase center",
+        "san francisco"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w8-03",
+      "week": 8,
+      "date": "2026-11-11",
+      "day_of_week": "Wednesday",
+      "time": "7:00 PM",
+      "sport": "Hockey",
+      "sport_icon": "🏒",
+      "league": "NHL",
+      "level": "Pro",
+      "home_team": "San Jose Sharks",
+      "away_team": "Pittsburgh Penguins",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "SAP Center",
+      "city": "San Jose",
+      "badge": "⭐ Pacific Division Clash: Pittsburgh Penguins vs Sharks",
+      "context_reason": "Hockey returns to SAP Center as San Jose's dynamic young core tests their chemistry against Pittsburgh Penguins.",
+      "insider_tips": "Diridon Station is right across Autumn Street from the arena — ride Caltrain or VTA Light Rail to skip parking. San Pedro Square Market is ideal for pregame dinner.",
+      "importance": "high",
+      "ticket_text": "Sharks Tickets",
+      "ticket_url": "https://www.nhl.com/sharks/tickets",
+      "recap_url": "https://www.espn.com/nhl/game/_/gameId/401892695/penguins-sharks",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "hockey",
+        "nhl",
+        "sharks",
+        "south bay",
+        "san jose"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w8-04",
+      "week": 8,
+      "date": "2026-11-15",
+      "day_of_week": "Sunday",
+      "time": "6:00 PM",
+      "sport": "Hockey",
+      "sport_icon": "🏒",
+      "league": "NHL",
+      "level": "Pro",
+      "home_team": "San Jose Sharks",
+      "away_team": "Nashville Predators",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "SAP Center",
+      "city": "San Jose",
+      "badge": "⭐ Pacific Division Clash: Nashville Predators vs Sharks",
+      "context_reason": "Hockey returns to SAP Center as San Jose's dynamic young core tests their chemistry against Nashville Predators.",
+      "insider_tips": "Diridon Station is right across Autumn Street from the arena — ride Caltrain or VTA Light Rail to skip parking. San Pedro Square Market is ideal for pregame dinner.",
+      "importance": "high",
+      "ticket_text": "Sharks Tickets",
+      "ticket_url": "https://www.nhl.com/sharks/tickets",
+      "recap_url": "https://www.espn.com/nhl/game/_/gameId/401892725/predators-sharks",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "hockey",
+        "nhl",
+        "sharks",
+        "south bay",
+        "san jose"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w9-01",
+      "week": 9,
+      "date": "2026-11-21",
+      "day_of_week": "Saturday",
+      "time": "7:00 PM",
+      "sport": "Hockey",
+      "sport_icon": "🏒",
+      "league": "NHL",
+      "level": "Pro",
+      "home_team": "San Jose Sharks",
+      "away_team": "Seattle Kraken",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "SAP Center",
+      "city": "San Jose",
+      "badge": "⭐ Pacific Division Clash: Seattle Kraken vs Sharks",
+      "context_reason": "Hockey returns to SAP Center as San Jose's dynamic young core tests their chemistry against Seattle Kraken.",
+      "insider_tips": "Diridon Station is right across Autumn Street from the arena — ride Caltrain or VTA Light Rail to skip parking. San Pedro Square Market is ideal for pregame dinner.",
+      "importance": "high",
+      "ticket_text": "Sharks Tickets",
+      "ticket_url": "https://www.nhl.com/sharks/tickets",
+      "recap_url": "https://www.espn.com/nhl/game/_/gameId/401892767/kraken-sharks",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "hockey",
+        "nhl",
+        "sharks",
+        "south bay",
+        "san jose"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w9-02",
+      "week": 9,
+      "date": "2026-11-21",
+      "day_of_week": "Saturday",
+      "time": "4:00 PM",
+      "sport": "Football",
+      "sport_icon": "🏈",
+      "league": "NCAA FBS",
+      "level": "College",
+      "home_team": "San José State Spartans",
+      "away_team": "UNLV Rebels",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "CEFCU Stadium",
+      "city": "San Jose",
+      "badge": "⚔️ Spartan Athletics: UNLV Rebels at SJSU",
+      "context_reason": "San Jose State Spartans host UNLV Rebels in South Bay collegiate action.",
+      "insider_tips": "Park at the South Campus lots off 7th Street.",
+      "importance": "standard",
+      "ticket_text": "Spartans Tickets",
+      "ticket_url": "https://sjsuspartans.com/tickets",
+      "recap_url": "https://www.espn.com/college-football/game/_/gameId/401864544/unlv-san-jose-st",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "football",
+        "college",
+        "south bay"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w9-03",
+      "week": 9,
+      "date": "2026-11-22",
+      "day_of_week": "Sunday",
+      "time": "5:20 PM",
+      "sport": "Football",
+      "sport_icon": "🏈",
+      "league": "NFL",
+      "level": "Pro",
+      "home_team": "San Francisco 49ers",
+      "away_team": "Minnesota Vikings",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara",
+      "badge": "🏈 NFC Showdown: Minnesota Vikings at 49ers",
+      "context_reason": "The 49ers host Minnesota Vikings at Levi's Stadium in a pivotal regular season clash.",
+      "insider_tips": "Take the VTA Orange Line light rail directly to the Great America station outside Intel Gate A.",
+      "importance": "high",
+      "ticket_text": "49ers Tickets",
+      "ticket_url": "https://www.49ers.com/tickets",
+      "recap_url": "https://www.espn.com/nfl/game/_/gameId/401873077/vikings-49ers",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "football",
+        "nfl",
+        "49ers",
+        "south bay",
+        "santa clara"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w9-04",
+      "week": 9,
+      "date": "2026-11-22",
+      "day_of_week": "Sunday",
+      "time": "5:30 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "level": "Pro",
+      "home_team": "Golden State Warriors",
+      "away_team": "Boston Celtics",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "🏀 Warriors Hoops: Boston Celtics at Warriors",
+      "context_reason": "Golden State Warriors host Boston Celtics at Chase Center.",
+      "insider_tips": "Take Muni T-Third light rail directly to Chase Center.",
+      "importance": "high",
+      "ticket_text": "Warriors Tickets",
+      "ticket_url": "https://www.nba.com/warriors/tickets",
+      "recap_url": "https://www.espn.com/nba/game/_/gameId/401910035/celtics-warriors",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "nba",
+        "warriors",
+        "chase center",
+        "san francisco"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w10-01",
+      "week": 10,
+      "date": "2026-11-23",
+      "day_of_week": "Monday",
+      "time": "7:00 PM",
+      "sport": "Hockey",
+      "sport_icon": "🏒",
+      "league": "NHL",
+      "level": "Pro",
+      "home_team": "San Jose Sharks",
+      "away_team": "Minnesota Wild",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "SAP Center",
+      "city": "San Jose",
+      "badge": "⭐ Pacific Division Clash: Minnesota Wild vs Sharks",
+      "context_reason": "Hockey returns to SAP Center as San Jose's dynamic young core tests their chemistry against Minnesota Wild.",
+      "insider_tips": "Diridon Station is right across Autumn Street from the arena — ride Caltrain or VTA Light Rail to skip parking. San Pedro Square Market is ideal for pregame dinner.",
+      "importance": "high",
+      "ticket_text": "Sharks Tickets",
+      "ticket_url": "https://www.nhl.com/sharks/tickets",
+      "recap_url": "https://www.espn.com/nhl/game/_/gameId/401892779/wild-sharks",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "hockey",
+        "nhl",
+        "sharks",
+        "south bay",
+        "san jose"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
+      }
+    },
+    {
+      "id": "w10-02",
+      "week": 10,
+      "date": "2026-11-27",
+      "day_of_week": "Friday",
+      "time": "12:30 PM",
+      "sport": "Football",
+      "sport_icon": "🏈",
+      "league": "NCAA FBS",
+      "level": "College",
+      "home_team": "San José State Spartans",
+      "away_team": "North Dakota State Bison",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "CEFCU Stadium",
+      "city": "San Jose",
+      "badge": "⚔️ Spartan Athletics: North Dakota State Bison at SJSU",
+      "context_reason": "San Jose State Spartans host North Dakota State Bison in South Bay collegiate action.",
+      "insider_tips": "Park at the South Campus lots off 7th Street.",
+      "importance": "standard",
+      "ticket_text": "Spartans Tickets",
+      "ticket_url": "https://sjsuspartans.com/tickets",
+      "recap_url": "https://www.espn.com/college-football/game/_/gameId/401864549/n-dakota-st-san-jose-st",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "football",
+        "college",
+        "south bay"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w10-03",
+      "week": 10,
+      "date": "2026-11-27",
+      "day_of_week": "Friday",
+      "time": "9:00 PM",
+      "sport": "Football",
+      "sport_icon": "🏈",
+      "league": "NCAA FBS",
+      "level": "College",
+      "home_team": "Stanford Cardinal",
+      "away_team": "SMU Mustangs",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Stanford Stadium",
+      "city": "Stanford",
+      "badge": "🌲 Stanford Cardinal: SMU Mustangs at Stanford",
+      "context_reason": "Stanford Cardinal host SMU Mustangs in collegiate action.",
+      "insider_tips": "Park early and walk through the historic Stanford eucalyptus groves.",
+      "importance": "standard",
+      "ticket_text": "Spartans Tickets",
+      "ticket_url": "https://sjsuspartans.com/tickets",
+      "recap_url": "https://www.espn.com/college-football/game/_/gameId/401858316/smu-stanford",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "football",
+        "college",
+        "south bay"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w10-04",
+      "week": 10,
+      "date": "2026-11-29",
+      "day_of_week": "Sunday",
+      "time": "1:25 PM",
+      "sport": "Football",
+      "sport_icon": "🏈",
+      "league": "NFL",
+      "level": "Pro",
+      "home_team": "San Francisco 49ers",
+      "away_team": "Seattle Seahawks",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara",
+      "badge": "🏈 NFC Showdown: Seattle Seahawks at 49ers",
+      "context_reason": "The 49ers host Seattle Seahawks at Levi's Stadium in a pivotal regular season clash.",
+      "insider_tips": "Take the VTA Orange Line light rail directly to the Great America station outside Intel Gate A.",
+      "importance": "high",
+      "ticket_text": "49ers Tickets",
+      "ticket_url": "https://www.49ers.com/tickets",
+      "recap_url": "https://www.espn.com/nfl/game/_/gameId/401873091/seahawks-49ers",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "football",
+        "nfl",
+        "49ers",
+        "south bay",
+        "santa clara"
       ],
       "weather": {
         "temp": "68°F",

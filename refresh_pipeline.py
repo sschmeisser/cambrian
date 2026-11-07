@@ -27,12 +27,15 @@ Usage:
 
 import argparse
 import datetime
+from zoneinfo import ZoneInfo
 import json
 import logging
 import os
 import subprocess
 import sys
 from typing import Dict, List, Optional, Tuple
+
+PACIFIC_TZ = ZoneInfo("America/Los_Angeles")
 
 try:
     import requests
@@ -505,7 +508,7 @@ def advance_calendar_window(games: List[Dict], weeks: List[Dict]) -> Tuple[List[
     - Appends the next rolling 7-day week to the schedule horizon.
     """
     log.info("Executing continuous calendar horizon advance...")
-    today_iso = datetime.date.today().isoformat()
+    today_iso = datetime.datetime.now(PACIFIC_TZ).date().isoformat()
 
     for w in weeks:
         days = w.get("days", [])
@@ -573,7 +576,7 @@ def apply_52_week_cliff(
     - Any games belonging to expired weeks roll off cleanly.
     """
     if not reference_date:
-        ref_dt = datetime.date.today()
+        ref_dt = datetime.datetime.now(PACIFIC_TZ).date()
     else:
         ref_dt = datetime.date.fromisoformat(reference_date)
 
@@ -683,7 +686,7 @@ def run_self_tests() -> bool:
     print("✓ Standings math & W-L increment logic verified")
 
     # 7. Test 52-week cache cliff roll-off
-    today = datetime.date.today()
+    today = datetime.datetime.now(PACIFIC_TZ).date()
     mock_weeks = [
         {"num": 100, "label": "53 Weeks Ago", "end_date": (today - datetime.timedelta(weeks=53)).isoformat(), "days": []},
         {"num": 101, "label": "51 Weeks Ago", "end_date": (today - datetime.timedelta(weeks=51)).isoformat(), "days": []},
@@ -761,11 +764,32 @@ def main():
     if changes_made:
         changelog.append(f"52-week cliff: rolled off {pruned_w} expired weeks and {pruned_g} games")
 
-    # 1. Calendar Horizon Rollover (if requested)
+    # 1. Automatic Horizon Advance & Rollover Check
+    today_iso = datetime.datetime.now(PACIFIC_TZ).date().isoformat()
+    auto_rollover_count = 0
+
+    def count_upcoming_weeks(w_list: List[Dict], t_iso: str) -> int:
+        curr_w = next((w for w in w_list if w.get("start_date", "") <= t_iso <= w.get("end_date", "")), None)
+        if not curr_w:
+            return 0
+        return sum(1 for w in w_list if w.get("start_date", "") > curr_w.get("end_date", ""))
+
+    if weeks:
+        # Automatically advance if today is past the end date or fewer than 2-3 upcoming weeks
+        while today_iso > weeks[-1].get("end_date", "") or count_upcoming_weeks(weeks, today_iso) < 3:
+            games, weeks = advance_calendar_window(games, weeks)
+            auto_rollover_count += 1
+            changes_made = True
+
+    if auto_rollover_count > 0:
+        changelog.append(f"Auto-advanced calendar horizon by {auto_rollover_count} week(s) to maintain rolling window")
+        log.info(f"Auto-advanced calendar horizon by {auto_rollover_count} week(s). Total weeks: {len(weeks)}")
+
+    # Calendar Horizon Rollover (if explicitly requested via CLI)
     if args.rollover:
         games, weeks = advance_calendar_window(games, weeks)
         changes_made = True
-        changelog.append("Advanced calendar horizon by 1 week")
+        changelog.append("Advanced calendar horizon by 1 week (CLI --rollover)")
 
     # 2. Schedule Synchronization & Discovery (unless --scores-only)
     if not args.scores_only:
