@@ -337,7 +337,7 @@
       "start_date": "2026-11-02",
       "end_date": "2026-11-08",
       "title": "Mid-Season Action & Regional Showcases (Nov 2 – 8)",
-      "is_past": false,
+      "is_past": true,
       "days": [
         {
           "date": "2026-11-02",
@@ -514,6 +514,53 @@
           "date": "2026-11-29",
           "name": "Sunday",
           "short": "Sun Nov 29"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "label": "Nov 30 – Dec 6",
+      "dates": "Nov 30 – Dec 6, 2026",
+      "short_dates": "Nov 30 – Dec 6",
+      "start_date": "2026-11-30",
+      "end_date": "2026-12-06",
+      "title": "Mid-Season Action & Regional Showcases (Nov 30 – Dec 6)",
+      "is_past": false,
+      "days": [
+        {
+          "date": "2026-11-30",
+          "name": "Monday",
+          "short": "Mon Nov 30"
+        },
+        {
+          "date": "2026-12-01",
+          "name": "Tuesday",
+          "short": "Tue Dec 01"
+        },
+        {
+          "date": "2026-12-02",
+          "name": "Wednesday",
+          "short": "Wed Dec 02"
+        },
+        {
+          "date": "2026-12-03",
+          "name": "Thursday",
+          "short": "Thu Dec 03"
+        },
+        {
+          "date": "2026-12-04",
+          "name": "Friday",
+          "short": "Fri Dec 04"
+        },
+        {
+          "date": "2026-12-05",
+          "name": "Saturday",
+          "short": "Sat Dec 05"
+        },
+        {
+          "date": "2026-12-06",
+          "name": "Sunday",
+          "short": "Sun Dec 06"
         }
       ]
     }
@@ -4101,9 +4148,9 @@
       "level": "Pro",
       "home_team": "San Francisco 49ers",
       "away_team": "Las Vegas Raiders",
-      "home_score": null,
-      "away_score": null,
-      "status": "upcoming",
+      "home_score": 38,
+      "away_score": 17,
+      "status": "final",
       "venue": "Levi's Stadium",
       "city": "Santa Clara",
       "badge": "🏈 NFC Showdown: Las Vegas Raiders at 49ers",
@@ -4113,7 +4160,7 @@
       "ticket_text": "49ers Tickets",
       "ticket_url": "https://www.49ers.com/tickets",
       "recap_url": "https://www.espn.com/nfl/game/_/gameId/401873047/raiders-49ers",
-      "result_summary": null,
+      "result_summary": "The 49ers delivered a dominant performance at Levi's Stadium, overwhelming the Las Vegas Raiders 38-17 in a pivotal regular season clash.",
       "is_cambrian": false,
       "is_south_bay": true,
       "tags": [
@@ -4143,9 +4190,9 @@
       "level": "College",
       "home_team": "Stanford",
       "away_team": "Syracuse",
-      "home_score": null,
-      "away_score": null,
-      "status": "upcoming",
+      "home_score": 1,
+      "away_score": 2,
+      "status": "final",
       "venue": "Cagan Stadium",
       "city": "Stanford",
       "badge": "🌲 Stanford Cardinal: Syracuse at Stanford",
@@ -4154,8 +4201,8 @@
       "importance": "standard",
       "ticket_text": "Broncos Tickets",
       "ticket_url": "https://santaclarabroncos.com/tickets",
-      "recap_url": "https://santaclarabroncos.com/tickets",
-      "result_summary": null,
+      "recap_url": "https://www.espn.com/soccer/video/_/gameId/401929734",
+      "result_summary": "Syracuse edged out Stanford 2-1 in a tight collegiate contest at Cagan Stadium, handing the Cardinal a narrow home defeat.",
       "is_cambrian": false,
       "is_south_bay": true,
       "tags": [
@@ -4667,6 +4714,90 @@
         "icon": "🌙",
         "attire": "Layers recommended",
         "indoor": false
+      }
+    },
+    {
+      "id": "w10-05",
+      "week": 10,
+      "date": "2026-11-24",
+      "day_of_week": "Tuesday",
+      "time": "7:00 PM",
+      "sport": "Soccer",
+      "sport_icon": "⚽",
+      "league": "MLS",
+      "level": "Pro",
+      "home_team": "San Jose Earthquakes",
+      "away_team": "Houston Dynamo FC",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "PayPal Park",
+      "city": "San Jose",
+      "badge": "⚽ MLS Matchday: Houston Dynamo FC at Earthquakes",
+      "context_reason": "San Jose Earthquakes host Houston Dynamo FC at PayPal Park.",
+      "insider_tips": "PayPal Park features the largest outdoor bar in North America behind the north goal.",
+      "importance": "high",
+      "ticket_text": "Earthquakes Tickets",
+      "ticket_url": "https://www.sjearthquakes.com/tickets",
+      "recap_url": "https://www.espn.com/soccer/match/_/gameId/401933738/houston-dynamo-fc-san-jose-earthquakes",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "soccer",
+        "mls",
+        "earthquakes",
+        "south bay",
+        "san jose"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
+    },
+    {
+      "id": "w11-01",
+      "week": 11,
+      "date": "2026-12-01",
+      "day_of_week": "Tuesday",
+      "time": "8:00 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "level": "Pro",
+      "home_team": "Golden State Warriors",
+      "away_team": "Utah Jazz",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "🏀 Warriors Hoops: Utah Jazz at Warriors",
+      "context_reason": "Golden State Warriors host Utah Jazz at Chase Center.",
+      "insider_tips": "Take Muni T-Third light rail directly to Chase Center.",
+      "importance": "high",
+      "ticket_text": "Warriors Tickets",
+      "ticket_url": "https://www.nba.com/warriors/tickets",
+      "recap_url": "https://www.espn.com/nba/game/_/gameId/401910075/jazz-warriors",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "nba",
+        "warriors",
+        "chase center",
+        "san francisco"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
       }
     }
   ]

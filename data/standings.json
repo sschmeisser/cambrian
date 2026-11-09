@@ -15,10 +15,10 @@
       {
         "rank": 1,
         "team": "San Francisco 49ers",
-        "w": 4,
+        "w": 5,
         "l": 1,
         "col3": 0,
-        "col4": ".800",
+        "col4": ".833",
         "col5": "+26",
         "note": "Division Leader"
       },
@@ -1548,7 +1548,7 @@
         "rank": 1,
         "team": "Stanford Cardinal Men",
         "w": 13,
-        "l": 6,
+        "l": 7,
         "col3": 6,
         "col4": 45,
         "col5": "+24",
