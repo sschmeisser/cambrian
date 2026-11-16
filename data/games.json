@@ -4888,6 +4888,46 @@
         "attire": "Layers recommended",
         "indoor": false
       }
+    },
+    {
+      "id": "w9-05",
+      "week": 9,
+      "date": "2026-11-19",
+      "day_of_week": "Thursday",
+      "time": "6:00 PM",
+      "sport": "Soccer",
+      "sport_icon": "⚽",
+      "league": "NCAA Division I",
+      "level": "College",
+      "home_team": "Stanford",
+      "away_team": "Tulsa",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Cagan Stadium",
+      "city": "Stanford",
+      "badge": "🌲 Stanford Cardinal: Tulsa at Stanford",
+      "context_reason": "Stanford Cardinal host Tulsa in collegiate action.",
+      "insider_tips": "Park early and walk through the historic Stanford eucalyptus groves.",
+      "importance": "standard",
+      "ticket_text": "Broncos Tickets",
+      "ticket_url": "https://santaclarabroncos.com/tickets",
+      "recap_url": "https://santaclarabroncos.com/tickets",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": true,
+      "tags": [
+        "soccer",
+        "college",
+        "south bay"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Clear Evening",
+        "icon": "🌙",
+        "attire": "Layers recommended",
+        "indoor": false
+      }
     }
   ]
 }
