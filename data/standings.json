@@ -131,6 +131,16 @@
     "rows": [
       {
         "rank": 1,
+        "team": "San Jose Sharks",
+        "w": 1,
+        "l": 0,
+        "col3": 0,
+        "col4": 3,
+        "col5": "E",
+        "note": "Home Opener Oct 1"
+      },
+      {
+        "rank": 2,
         "team": "Anaheim Ducks",
         "w": 0,
         "l": 0,
@@ -140,7 +150,7 @@
         "note": ""
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Calgary Flames",
         "w": 0,
         "l": 0,
@@ -150,7 +160,7 @@
         "note": ""
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Edmonton Oilers",
         "w": 0,
         "l": 0,
@@ -160,7 +170,7 @@
         "note": "Defending West Champs"
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Los Angeles Kings",
         "w": 0,
         "l": 0,
@@ -168,16 +178,6 @@
         "col4": "0",
         "col5": "E",
         "note": ""
-      },
-      {
-        "rank": 5,
-        "team": "San Jose Sharks",
-        "w": 0,
-        "l": 0,
-        "col3": 0,
-        "col4": "0",
-        "col5": "E",
-        "note": "Home Opener Oct 1"
       },
       {
         "rank": 6,
