@@ -15,10 +15,10 @@
       {
         "rank": 1,
         "team": "San Francisco 49ers",
-        "w": 5,
+        "w": 6,
         "l": 1,
         "col3": 0,
-        "col4": ".833",
+        "col4": ".857",
         "col5": "+26",
         "note": "Division Leader"
       },
@@ -329,7 +329,7 @@
       {
         "rank": 1,
         "team": "Golden State Warriors",
-        "w": 1,
+        "w": 2,
         "l": 0,
         "col3": "—",
         "col4": "1.000",
