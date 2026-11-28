@@ -4700,9 +4700,9 @@
       "level": "College",
       "home_team": "San José State Spartans",
       "away_team": "North Dakota State Bison",
-      "home_score": null,
-      "away_score": null,
-      "status": "upcoming",
+      "home_score": 31,
+      "away_score": 38,
+      "status": "final",
       "venue": "CEFCU Stadium",
       "city": "San Jose",
       "badge": "⚔️ Spartan Athletics: North Dakota State Bison at SJSU",
@@ -4974,6 +4974,48 @@
         "icon": "🌙",
         "attire": "Layers recommended",
         "indoor": false
+      }
+    },
+    {
+      "id": "w12-02",
+      "week": 12,
+      "date": "2026-12-10",
+      "day_of_week": "Thursday",
+      "time": "7:00 PM",
+      "sport": "Basketball",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "level": "Pro",
+      "home_team": "Golden State Warriors",
+      "away_team": "Denver Nuggets",
+      "home_score": null,
+      "away_score": null,
+      "status": "upcoming",
+      "venue": "Chase Center",
+      "city": "San Francisco",
+      "badge": "🏀 Warriors Hoops: Denver Nuggets at Warriors",
+      "context_reason": "Golden State Warriors host Denver Nuggets at Chase Center.",
+      "insider_tips": "Take Muni T-Third light rail directly to Chase Center.",
+      "importance": "high",
+      "ticket_text": "Warriors Tickets",
+      "ticket_url": "https://www.nba.com/warriors/tickets",
+      "recap_url": "https://www.espn.com/nba/game/_/gameId/401937114/nuggets-warriors",
+      "result_summary": null,
+      "is_cambrian": false,
+      "is_south_bay": false,
+      "tags": [
+        "basketball",
+        "nba",
+        "warriors",
+        "chase center",
+        "san francisco"
+      ],
+      "weather": {
+        "temp": "68°F",
+        "cond": "Indoor Arena",
+        "icon": "🏟️",
+        "attire": "Comfortable indoor layers",
+        "indoor": true
       }
     }
   ]
